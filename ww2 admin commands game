@@ -1,0 +1,55 @@
+if game.PlaceId == 9329726891 then
+
+function Kill(params)
+if params[2] == "all" then
+for i,v in pairs(game.Players:GetPlayers()) do
+local ayo = {
+    [1] = game:GetService("Players")[v.Name].Character.Humanoid,
+    [2] = 500
+}
+
+game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
+end
+elseif params[2] == "me" then
+local ayo = {
+    [1] = game:GetService("Players").LocalPlayer.Character.Humanoid,
+    [2] = 500
+}
+
+game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
+else
+local ayo = {
+    [1] = game:GetService("Players")[params[2]].Character.Humanoid,
+    [2] = 500
+}
+
+game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
+end
+end
+
+function GiveMoney(params)
+local getnumber = params[2]
+local number = -getnumber
+local lmao = {
+    [1] = game:GetService("Players").LocalPlayer,
+    [2] = number
+}
+
+game:GetService("Lighting").SendWarMoneyEvent:FireServer(unpack(lmao))
+end
+
+function Teleport(params)
+game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.CFrame = game.Players[params[2]].Character.HumanoidRootPart.CFrame
+end
+
+game.Players[game.Players.LocalPlayer.Name].Chatted:Connect(function(msg)
+local args = string.split(msg," ")
+if args[1] == "/kill" then
+Kill(args)
+elseif args[1] == "/givemoney" then
+GiveMoney(args)
+elseif args[1] == "/tp" then
+Teleport(args)
+end
+end)
+end
