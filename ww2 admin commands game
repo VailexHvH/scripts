@@ -1,4 +1,5 @@
 if game.PlaceId == 9329726891 then
+--gameplaceid start
 
 function Kill(params)
 if params[2] == "all" then
