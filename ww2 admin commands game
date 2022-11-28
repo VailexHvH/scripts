@@ -52,4 +52,6 @@ elseif args[1] == "/tp" then
 Teleport(args)
 end
 end)
+
+--gameplaceid end
 end
