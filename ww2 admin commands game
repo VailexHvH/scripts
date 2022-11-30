@@ -43,7 +43,7 @@ function Teleport(params)
 game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.CFrame = game.Players[params[2]].Character.HumanoidRootPart.CFrame
 end
 
-game.Players[game.Players.LocalPlayer.Name].Chatted:Connect(function(msg)
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
 local args = string.split(msg," ")
 if args[1] == "/kill" then
 Kill(args)
