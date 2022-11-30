@@ -40,7 +40,7 @@ game:GetService("Lighting").SendWarMoneyEvent:FireServer(unpack(lmao))
 end
 
 function Teleport(params)
-game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.CFrame = game.Players[params[2]].Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[params[2]].Character.HumanoidRootPart.CFrame
 end
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
