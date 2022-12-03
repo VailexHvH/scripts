@@ -1,143 +1,143 @@
---if game.PlaceId == 9329726891 then
---gameplaceid start
+if game.PlaceId == 9329726891 then
+   --gameplaceid start
 
-function Kill(params)
-if params[2] == "all" then
-for i,v in pairs(game.Players:GetPlayers()) do
-local ayo = {
-    [1] = game:GetService("Players")[v.Name].Character.Humanoid,
-    [2] = 500
-}
+   function Kill(params)
+      if params[2] == "all" then
+         for i,v in pairs(game.Players:GetPlayers()) do
+            local ayo = {
+               [1] = game:GetService("Players")[v.Name].Character.Humanoid,
+               [2] = 500
+            }
 
-game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
-end
-elseif params[2] == "me" then
-local ayo = {
-    [1] = game:GetService("Players").LocalPlayer.Character.Humanoid,
-    [2] = 500
-}
+            game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
+         end
+      elseif params[2] == "me" then
+         local ayo = {
+            [1] = game:GetService("Players").LocalPlayer.Character.Humanoid,
+            [2] = 500
+         }
 
-game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
-elseif params[2] == "random" then
-local getrandom = math.random(1, #game.Players:GetPlayers())
-local getplr = game.Players:GetPlayers()[getrandom]
-local ayo = {
-    [1] = game:GetService("Players")[getplr.Name].Character.Humanoid,
-    [2] = 500
-}
+         game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
+      elseif params[2] == "random" then
+         local getrandom = math.random(1, #game.Players:GetPlayers())
+         local getplr = game.Players:GetPlayers()[getrandom]
+         local ayo = {
+            [1] = game:GetService("Players")[getplr.Name].Character.Humanoid,
+            [2] = 500
+         }
 
-game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
-elseif params[2] == "others" then
-for _,players in pairs(game.Players:GetPlayers()) do
-if game.Players.LocalPlayer.Name ~= players.Name then
-local ayo = {
-    [1] = game:GetService("Players")[players.Name].Character.Humanoid,
-    [2] = 500
-}
+         game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
+      elseif params[2] == "others" then
+         for _,players in pairs(game.Players:GetPlayers()) do
+            if game.Players.LocalPlayer.Name ~= players.Name then
+               local ayo = {
+                  [1] = game:GetService("Players")[players.Name].Character.Humanoid,
+                  [2] = 500
+               }
 
-game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
-end
-end
-else
-local ayo = {
-    [1] = game:GetService("Players")[params[2]].Character.Humanoid,
-    [2] = 500
-}
+               game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
+            end
+         end
+      else
+         local ayo = {
+            [1] = game:GetService("Players")[params[2]].Character.Humanoid,
+            [2] = 500
+         }
 
-game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
-end
-end
+         game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
+      end
+   end
 
-function GiveMoney(params)
-local getnumber = params[2]
-local number = -getnumber
-local lmao = {
-    [1] = game:GetService("Players").LocalPlayer,
-    [2] = number
-}
+   function GiveMoney(params)
+      local getnumber = params[2]
+      local number = -getnumber
+      local lmao = {
+         [1] = game:GetService("Players").LocalPlayer,
+         [2] = number
+      }
 
-game:GetService("Lighting").SendWarMoneyEvent:FireServer(unpack(lmao))
-end
+      game:GetService("Lighting").SendWarMoneyEvent:FireServer(unpack(lmao))
+   end
 
-function Teleport(params)
-if params[2] == "random" then
-local getrandom = math.random(1, #game.Players:GetPlayers())
-local getplr = game.Players:GetPlayers()[getrandom]
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[getplr.Name].Character.HumanoidRootPart.CFrame
-else
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[params[2]].Character.HumanoidRootPart.CFrame
-end
+   function Teleport(params)
+      if params[2] == "random" then
+         local getrandom = math.random(1, #game.Players:GetPlayers())
+         local getplr = game.Players:GetPlayers()[getrandom]
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[getplr.Name].Character.HumanoidRootPart.CFrame
+      else
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[params[2]].Character.HumanoidRootPart.CFrame
+      end
 
-function Godmode(params)
-if params[2] == "all" then
-for _,v in pairs(game.Players:GetPlayers()) do
-local ayo = {
-    [1] = 0,
-    [2] = "Level4vest",
-    [3] = game:GetService("Players")[v.Name].Character.Humanoid,
-    [4] = math.huge
-}
+      function Godmode(params)
+         if params[2] == "all" then
+            for _,v in pairs(game.Players:GetPlayers()) do
+               local ayo = {
+                  [1] = 0,
+                  [2] = "Level4vest",
+                  [3] = game:GetService("Players")[v.Name].Character.Humanoid,
+                  [4] = math.huge
+               }
 
-game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
-end
-elseif params[2] == "me" then
-local ayo = {
-    [1] = 0,
-    [2] = "Level4vest",
-    [3] = game:GetService("Players").LocalPlayer.Character.Humanoid,
-    [4] = math.huge
-}
+               game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
+            end
+         elseif params[2] == "me" then
+            local ayo = {
+               [1] = 0,
+               [2] = "Level4vest",
+               [3] = game:GetService("Players").LocalPlayer.Character.Humanoid,
+               [4] = math.huge
+            }
 
-game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
-elseif params[2] == "others" then
-local plr = game.Players.LocalPlayer
-for _,others in pairs(game.Players:GetPlayers()) do
-if plr.Name ~= others.Name then
-local ayo = {
-    [1] = 0,
-    [2] = "Level4vest",
-    [3] = game:GetService("Players")[others.Name].Character.Humanoid,
-    [4] = math.huge
-}
+            game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
+         elseif params[2] == "others" then
+            local plr = game.Players.LocalPlayer
+            for _,others in pairs(game.Players:GetPlayers()) do
+               if plr.Name ~= others.Name then
+                  local ayo = {
+                     [1] = 0,
+                     [2] = "Level4vest",
+                     [3] = game:GetService("Players")[others.Name].Character.Humanoid,
+                     [4] = math.huge
+                  }
 
-game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
-end
-end
-elseif params[2] == "random" then
-local getrandom = math.random(1, #game.Players:GetPlayers())
-local getplr = game.Players:GetPlayers()[getrandom]
-local ayo = {
-    [1] = 0,
-    [2] = "Level4vest",
-    [3] = game:GetService("Players")[getplr.Name].Character.Humanoid,
-    [4] = math.huge
-}
+                  game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
+               end
+            end
+         elseif params[2] == "random" then
+            local getrandom = math.random(1, #game.Players:GetPlayers())
+            local getplr = game.Players:GetPlayers()[getrandom]
+            local ayo = {
+               [1] = 0,
+               [2] = "Level4vest",
+               [3] = game:GetService("Players")[getplr.Name].Character.Humanoid,
+               [4] = math.huge
+            }
 
-game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
-else
-local ayo = {
-    [1] = 0,
-    [2] = "Level4vest",
-    [3] = game:GetService("Players")[params[2]].Character.Humanoid,
-    [4] = math.huge
-}
+            game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
+         else
+            local ayo = {
+               [1] = 0,
+               [2] = "Level4vest",
+               [3] = game:GetService("Players")[params[2]].Character.Humanoid,
+               [4] = math.huge
+            }
 
-game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
-end
-end
+            game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
+         end
+      end
 
-game.Players.LocalPlayer.Chatted:Connect(function(msg)
-local args = string.split(msg," ")
-if args[1] == "/kill" then
-Kill(args)
-elseif args[1] == "/givemoney" then
-GiveMoney(args)
-elseif args[1] == "/tp" then
-Teleport(args)
-elseif args[1] == "/god" then
-Godmode(args)
-end
-end)
+      game.Players.LocalPlayer.Chatted:Connect(function(msg)
+      local args = string.split(msg," ")
+      if args[1] == "/kill" then
+         Kill(args)
+      elseif args[1] == "/givemoney" then
+         GiveMoney(args)
+      elseif args[1] == "/tp" then
+         Teleport(args)
+      elseif args[1] == "/god" then
+         Godmode(args)
+      end
+      end)
 
---gameplaceid end
---end
+      --gameplaceid end
+   end
