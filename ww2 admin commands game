@@ -80,7 +80,7 @@ if plr.Name ~= others.Name then
 local ayo = {
     [1] = 0,
     [2] = "Level4vest",
-    [3] = game:GetService("Players")[params[2]].Character.Humanoid,
+    [3] = game:GetService("Players")[others.Name].Character.Humanoid,
     [4] = math.huge
 }
 
