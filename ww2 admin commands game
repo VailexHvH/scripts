@@ -60,6 +60,13 @@ game:GetService("Lighting").SendWarMoneyEvent:FireServer(unpack(lmao))
 end
 
 function Teleport(params)
+if params[2] == "random" then
+for _,v in pairs(game.Players:GetPlayers()) do
+if game.Players.LocalPlayer.Name ~= v.Name then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[v.Name].Character.HumanoidRootPart.CFrame
+end
+end
+else
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[params[2]].Character.HumanoidRootPart.CFrame
 end
 
