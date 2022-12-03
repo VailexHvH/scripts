@@ -43,6 +43,39 @@ function Teleport(params)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[params[2]].Character.HumanoidRootPart.CFrame
 end
 
+function Godmode(params)
+if params[2] == "all" then
+for _,v in pairs(game.Players:GetPlayers()) do
+local ayo = {
+    [1] = 0,
+    [2] = "Level4vest",
+    [3] = game:GetService("Players")[v.Name].Character.Humanoid,
+    [4] = math.huge
+}
+
+game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
+end
+elseif params[2] == "me" then
+local ayo = {
+    [1] = 0,
+    [2] = "Level4vest",
+    [3] = game:GetService("Players").LocalPlayer.Character.Humanoid,
+    [4] = math.huge
+}
+
+game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
+else
+local ayo = {
+    [1] = 0,
+    [2] = "Level4vest",
+    [3] = game:GetService("Players")[params[2]].Character.Humanoid,
+    [4] = math.huge
+}
+
+game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
+end
+end
+
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 local args = string.split(msg," ")
 if args[1] == "/kill" then
@@ -51,6 +84,8 @@ elseif args[1] == "/givemoney" then
 GiveMoney(args)
 elseif args[1] == "/tp" then
 Teleport(args)
+elseif args[1] == "/god" then
+Godmode(args)
 end
 end)
 
