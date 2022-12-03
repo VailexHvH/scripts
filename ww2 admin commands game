@@ -61,11 +61,9 @@ end
 
 function Teleport(params)
 if params[2] == "random" then
-for _,v in pairs(game.Players:GetPlayers()) do
-if game.Players.LocalPlayer.Name ~= v.Name then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[v.Name].Character.HumanoidRootPart.CFrame
-end
-end
+local getrandom = math.random(1, #game.Players:GetPlayers())
+local getplr = game.Players:GetPlayers()[getrandom]
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[getplr.Name].Character.HumanoidRootPart.CFrame
 else
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[params[2]].Character.HumanoidRootPart.CFrame
 end
@@ -105,6 +103,17 @@ local ayo = {
 game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
 end
 end
+elseif params[2] == "random" then
+local getrandom = math.random(1, #game.Players:GetPlayers())
+local getplr = game.Players:GetPlayers()[getrandom]
+local ayo = {
+    [1] = 0,
+    [2] = "Level4vest",
+    [3] = game:GetService("Players")[getplr.Name].Character.Humanoid,
+    [4] = math.huge
+}
+
+game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
 else
 local ayo = {
     [1] = 0,
