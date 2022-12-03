@@ -73,6 +73,20 @@ local ayo = {
 }
 
 game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
+elseif params[2] == "others" then
+local plr = game.Players.LocalPlayer
+for _,others in pairs(game.Players:GetPlayers()) do
+if plr.Name ~= others.Name then
+local ayo = {
+    [1] = 0,
+    [2] = "Level4vest",
+    [3] = game:GetService("Players")[params[2]].Character.Humanoid,
+    [4] = math.huge
+}
+
+game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
+end
+end
 else
 local ayo = {
     [1] = 0,
