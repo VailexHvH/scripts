@@ -126,6 +126,203 @@ if game.PlaceId == 9329726891 then
       end
    end
 
+function Heal(params)
+if params[2] == "all" then
+for _,v in pairs(game.Players:GetPlayers()) do
+local head = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.Head,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(head))
+local torso = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.Torso,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(torso))
+local rightarm = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.RightArm,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(rightarm))
+local leftarm = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.LeftArm,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftarm))
+local rightleg = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.RightLeg,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(rightleg))
+local leftleg = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.LeftLeg,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftleg))
+end
+elseif params[2] == "me" then
+local head = {
+    [1] = game:GetService("Players").LocalPlayer.Character.CharacterHealth.Head,
+    [2] = game:GetService("Players").LocalPlayer.Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(head))
+local torso = {
+    [1] = game:GetService("Players").LocalPlayer.Character.CharacterHealth.Torso,
+    [2] = game:GetService("Players").LocalPlayer.Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(torso))
+local rightarm = {
+    [1] = game:GetService("Players").LocalPlayer.Character.CharacterHealth.RightArm,
+    [2] = game:GetService("Players").LocalPlayer.Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(rightarm))
+local leftarm = {
+    [1] = game:GetService("Players").LocalPlayer.Character.CharacterHealth.LeftArm,
+    [2] = game:GetService("Players").LocalPlayer.Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftarm))
+local rightleg = {
+    [1] = game:GetService("Players").LocalPlayer.Character.CharacterHealth.RightLeg,
+    [2] = game:GetService("Players").LocalPlayer.Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(rightleg))
+local leftleg = {
+    [1] = game:GetService("Players").LocalPlayer.Character.CharacterHealth.LeftLeg,
+    [2] = game:GetService("Players").LocalPlayer.Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftleg))
+elseif params[2] == "others" then
+for _,v in pairs(game.Players:GetPlayers()) do
+if game.Players.LocalPlayer.Name ~= v.Name then
+local head = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.Head,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(head))
+local torso = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.Torso,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(torso))
+local rightarm = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.RightArm,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(rightarm))
+local leftarm = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.LeftArm,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftarm))
+local rightleg = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.RightLeg,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(rightleg))
+local leftleg = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.LeftLeg,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftleg))
+end
+end
+elseif params[2] == "random" then
+local getrandom = math.random(1, #game.Players:GetPlayers())
+local v = game.Players:GetPlayers()[getrandom]
+local head = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.Head,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(head))
+local torso = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.Torso,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(torso))
+local rightarm = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.RightArm,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(rightarm))
+local leftarm = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.LeftArm,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftarm))
+local rightleg = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.RightLeg,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(rightleg))
+local leftleg = {
+    [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.LeftLeg,
+    [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftleg))
+else
+local head = {
+    [1] = game:GetService("Players")[params[2]].Character.CharacterHealth.Head,
+    [2] = game:GetService("Players")[params[2]].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(head))
+local torso = {
+    [1] = game:GetService("Players")[params[2]].Character.CharacterHealth.Torso,
+    [2] = game:GetService("Players")[params[2]].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(torso))
+local rightarm = {
+    [1] = game:GetService("Players")[params[2]].Character.CharacterHealth.RightArm,
+    [2] = game:GetService("Players")[params[2]].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(rightarm))
+local leftarm = {
+    [1] = game:GetService("Players")[params[2]].Character.CharacterHealth.LeftArm,
+    [2] = game:GetService("Players")[params[2]].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftarm))
+local rightleg = {
+    [1] = game:GetService("Players")[params[2]].Character.CharacterHealth.RightLeg,
+    [2] = game:GetService("Players")[params[2]].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(rightleg))
+local leftleg = {
+    [1] = game:GetService("Players")[params[2]].Character.CharacterHealth.LeftLeg,
+    [2] = game:GetService("Players")[params[2]].Character.CharacterHealth
+}
+
+game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftleg))
+end
+end
+
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
    if args[1] == "/kill" then
@@ -136,7 +333,9 @@ if game.PlaceId == 9329726891 then
       Teleport(args)
    elseif args[1] == "/god" then
       Godmode(args)
-   end
+   elseif args[1] == "/heal" then
+Heal(args)
+end
    end)
 
    --gameplaceid end
