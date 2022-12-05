@@ -68,6 +68,7 @@ if game.PlaceId == 9329726891 then
          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[params[2]].Character.HumanoidRootPart.CFrame
       end
    end
+
    function Godmode(params)
       if params[2] == "all" then
          for _,v in pairs(game.Players:GetPlayers()) do
