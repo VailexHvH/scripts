@@ -1,5 +1,3 @@
-workspace.map.otherparts.Parent = workspace.map.bulletsgothrough
-wait(1)
 local custom_theme = {} --soon
 
 local function CreateInstance(cls,props)
