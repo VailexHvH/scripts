@@ -324,6 +324,63 @@ if game.PlaceId == 9329726891 then
       end
    end
 
+function GiveHP(params)
+if params[2] == "all" then
+for _,v in pairs(game.Players:GetPlayers()) do
+local health = {
+   [1] = 0,
+   [2] = "Level4vest",
+   [3] = game:GetService("Players")[v.Name].Character.Humanoid,
+   [4] = params[3]
+}
+
+game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+end
+elseif params[2] == "me" then
+local health = {
+   [1] = 0,
+   [2] = "Level4vest",
+   [3] = game:GetService("Players").LocalPlayer.Character.Humanoid,
+   [4] = params[3]
+}
+
+game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+elseif params[2] == "random" then
+local getrandom = math.random(1, #game.Players:GetPlayers())
+local getplr = game.Players:GetPlayers()[getrandom]
+local health = {
+   [1] = 0,
+   [2] = "Level4vest",
+   [3] = game:GetService("Players")[getplr.Name].Character.Humanoid,
+   [4] = params[3]
+}
+
+game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+elseif params[2] == "others" then
+for _,v in pairs(game.Players:GetPlayers()) do
+if game.Players.LocalPlayer.Name ~= v.Name then
+local health = {
+   [1] = 0,
+   [2] = "Level4vest",
+   [3] = game:GetService("Players")[v.Name].Character.Humanoid,
+   [4] = params[3]
+}
+
+game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+end
+end
+else
+local health = {
+   [1] = 0,
+   [2] = "Level4vest",
+   [3] = game:GetService("Players")[params[2]].Character.Humanoid,
+   [4] = params[3]
+}
+
+game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+end
+end
+
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
    if args[1] == "/kill" then
@@ -336,6 +393,8 @@ if game.PlaceId == 9329726891 then
       Godmode(args)
    elseif args[1] == "/heal" then
       Heal(args)
+elseif args[1] == "/givehp" then
+GiveHP(args)
    end
    end)
 
