@@ -383,17 +383,18 @@ if game.PlaceId == 9329726891 then
 
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
-   if args[1] == "/kill" then
+   local cmd = string.lower(args[1])
+   if cmd == "/kill" then
       Kill(args)
-   elseif args[1] == "/givemoney" then
+   elseif cmd == "/givemoney" then
       GiveMoney(args)
-   elseif args[1] == "/tp" then
+   elseif cmd == "/tp" then
       Teleport(args)
-   elseif args[1] == "/god" then
+   elseif cmd == "/god" then
       Godmode(args)
-   elseif args[1] == "/heal" then
+   elseif cmd == "/heal" then
       Heal(args)
-   elseif args[1] == "/givehp" then
+   elseif cmd == "/givehp" then
       GiveHP(args)
    end
    end)
