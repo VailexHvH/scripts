@@ -6,7 +6,7 @@ if game.PlaceId == 9329726891 then
          for i,v in pairs(game.Players:GetPlayers()) do
             local ayo = {
                [1] = game:GetService("Players")[v.Name].Character.Humanoid,
-               [2] = 500
+               [2] = math.huge
             }
 
             game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
@@ -14,7 +14,7 @@ if game.PlaceId == 9329726891 then
       elseif params[2] == "me" then
          local ayo = {
             [1] = game:GetService("Players").LocalPlayer.Character.Humanoid,
-            [2] = 500
+            [2] = math.huge
          }
 
          game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
@@ -23,7 +23,7 @@ if game.PlaceId == 9329726891 then
          local getplr = game.Players:GetPlayers()[getrandom]
          local ayo = {
             [1] = game:GetService("Players")[getplr.Name].Character.Humanoid,
-            [2] = 500
+            [2] = math.huge
          }
 
          game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
@@ -32,7 +32,7 @@ if game.PlaceId == 9329726891 then
             if game.Players.LocalPlayer.Name ~= players.Name then
                local ayo = {
                   [1] = game:GetService("Players")[players.Name].Character.Humanoid,
-                  [2] = 500
+                  [2] = math.huge
                }
 
                game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
@@ -41,7 +41,7 @@ if game.PlaceId == 9329726891 then
       else
          local ayo = {
             [1] = game:GetService("Players")[params[2]].Character.Humanoid,
-            [2] = 500
+            [2] = math.huge
          }
 
          game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
