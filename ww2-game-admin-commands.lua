@@ -401,27 +401,27 @@ if game.PlaceId == 9329726891 then
       end
    end
 
-function CommandsList()
-local properties = {
-    Color = Color3.new(12, 255, 0);
-    Font = Enum.Font.FredokaOne;
-    TextSize = 16;
-}
-properties.Text = "Commands:"
-game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-properties.Text = "/kill [Player] - Kill any player except players with godmode."
-game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-properties.Text = "/givemoney [Amount] - Gives you money."
-game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-properties.Text = "/tp [Player] - Teleports you to any player."
-game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-properties.Text = "/god [Player] - Gives godmode to any player."
-game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-properties.Text = "/heal [Player] - Heals any player."
-game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-properties.Text = "/givehp [Player] [Amount] - Gives health to any player."
-game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-end
+   function CommandsList()
+      local properties = {
+         Color = Color3.new(12, 255, 0);
+         Font = Enum.Font.FredokaOne;
+         TextSize = 16;
+      }
+      properties.Text = "Commands:"
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/kill [Player] - Kill any player except players with godmode."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/givemoney [Amount] - Gives you money."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/tp [Player] - Teleports you to any player."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/god [Player] - Gives godmode to any player."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/heal [Player] - Heals any player."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/givehp [Player] [Amount] - Gives health to any player."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+   end
 
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
@@ -438,27 +438,27 @@ end
       Heal(args)
    elseif cmd == "/givehp" then
       GiveHP(args)
-elseif cmd == "/cmds" then
-CommandsList()
+   elseif cmd == "/cmds" then
+      CommandsList()
    end
    end)
 
-local properties = {
-    Color = Color3.new(12, 255, 0);
-    Font = Enum.Font.FredokaOne;
-    TextSize = 16;
-}
+   local properties = {
+      Color = Color3.new(12, 255, 0);
+      Font = Enum.Font.FredokaOne;
+      TextSize = 16;
+   }
 
-game:GetService("StarterGui"):SetCore("SendNotification",
-    {
-        Title = "Admin Commands",
-        Text = "Loaded! Use /cmds to see every command. Made by Gerashino#8015",
-        Duration = 3
-    }
-)
+   game:GetService("StarterGui"):SetCore("SendNotification",
+   {
+      Title = "Admin Commands",
+      Text = "Loaded! Use /cmds to see every command. Made by Gerashino#8015",
+      Duration = 3
+   }
+   )
 
-properties.Text = "Script is now running! Use /cmds to see every command. Made by Gerashino#8015"
-game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+   properties.Text = "Script is now running! Use /cmds to see every command. Made by Gerashino#8015"
+   game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
 
    --gameplaceid end
 end
