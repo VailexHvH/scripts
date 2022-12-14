@@ -421,7 +421,13 @@ if game.PlaceId == 9329726891 then
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/givehp [Player] [Amount] - Gives health to any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/rejoin (Aliases: rj) - Rejoin."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
+
+function Rejoin()
+game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+end
 
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
@@ -440,7 +446,9 @@ if game.PlaceId == 9329726891 then
       GiveHP(args)
    elseif cmd == "/cmds" then
       CommandsList()
-   end
+   elseif cmd == "/rejoin" or cmd == "/rj" then
+Rejoin()
+end
    end)
 
    local properties = {
