@@ -425,9 +425,9 @@ if game.PlaceId == 9329726891 then
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
-function Rejoin()
-game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
-end
+   function Rejoin()
+      game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+   end
 
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
@@ -447,8 +447,8 @@ end
    elseif cmd == "/cmds" then
       CommandsList()
    elseif cmd == "/rejoin" or cmd == "/rj" then
-Rejoin()
-end
+      Rejoin()
+   end
    end)
 
    local properties = {
