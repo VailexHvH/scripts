@@ -333,7 +333,7 @@ if game.PlaceId == 11698235691 then
    function GiveHP(params)
       if params[2] == "all" then
          for _,v in pairs(game.Players:GetPlayers()) do
-            local getnumber = params[2]
+            local getnumber = params[3]
             local number = -getnumber
             local lol = {
                [1] = game:GetService("Players")[v.Name].Character.Humanoid,
@@ -343,7 +343,7 @@ if game.PlaceId == 11698235691 then
             game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
          end
       elseif params[2] == "me" then
-         local getnumber = params[2]
+         local getnumber = params[3]
          local number = -getnumber
          local lol = {
             [1] = game:GetService("Players").LocalPlayer.Character.Humanoid,
@@ -354,7 +354,7 @@ if game.PlaceId == 11698235691 then
       elseif params[2] == "random" then
          local getrandom = math.random(1, #game.Players:GetPlayers())
          local getplr = game.Players:GetPlayers()[getrandom]
-         local getnumber = params[2]
+         local getnumber = params[3]
          local number = -getnumber
          local lol = {
             [1] = game:GetService("Players")[getplr.Name].Character.Humanoid,
@@ -365,7 +365,7 @@ if game.PlaceId == 11698235691 then
       elseif params[2] == "others" then
          for _,v in pairs(game.Players:GetPlayers()) do
             if game.Players.LocalPlayer.Name ~= v.Name then
-               local getnumber = params[2]
+               local getnumber = params[3]
                local number = -getnumber
                local lol = {
                   [1] = game:GetService("Players")[v.Name].Character.Humanoid,
@@ -378,7 +378,7 @@ if game.PlaceId == 11698235691 then
       else
          for i,v in pairs(game.Players:GetPlayers()) do
             if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
-               local getnumber = params[2]
+               local getnumber = params[3]
                local number = -getnumber
                local lol = {
                   [1] = game:GetService("Players")[v.Name].Character.Humanoid,
