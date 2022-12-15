@@ -437,7 +437,11 @@ if game.PlaceId == 11698235691 then
    end
    end)
 
-   game.Lighting.BlurEffect:Destroy()
+   game.RunService.Heartbeat:Connect(function()
+     pcall(function()
+       game.Lighting.BlurEffect.Size = 0
+     end)
+   end)
 
    local properties = {
       Color = Color3.new(12, 255, 0);
