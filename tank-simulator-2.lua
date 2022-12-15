@@ -4,49 +4,49 @@ if game.PlaceId == 9329726891 then
    function Kill(params)
       if params[2] == "all" then
          for i,v in pairs(game.Players:GetPlayers()) do
-local lol = {
-    [1] = game:GetService("Players")[v.Name].Character.Humanoid,
-    [2] = math.huge
-}
+            local lol = {
+               [1] = game:GetService("Players")[v.Name].Character.Humanoid,
+               [2] = math.huge
+            }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+            game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
          end
       elseif params[2] == "me" then
-local lol = {
-    [1] = game:GetService("Players").LocalPlayer.Character.Humanoid,
-    [2] = math.huge
-}
+         local lol = {
+            [1] = game:GetService("Players").LocalPlayer.Character.Humanoid,
+            [2] = math.huge
+         }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+         game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
       elseif params[2] == "random" then
          local getrandom = math.random(1, #game.Players:GetPlayers())
          local getplr = game.Players:GetPlayers()[getrandom]
-local lol = {
-    [1] = game:GetService("Players")[getplr.Name].Character.Humanoid,
-    [2] = math.huge
-}
+         local lol = {
+            [1] = game:GetService("Players")[getplr.Name].Character.Humanoid,
+            [2] = math.huge
+         }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+         game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
       elseif params[2] == "others" then
          for _,players in pairs(game.Players:GetPlayers()) do
             if game.Players.LocalPlayer.Name ~= players.Name then
-local lol = {
-    [1] = game:GetService("Players")[players.Name].Character.Humanoid,
-    [2] = math.huge
-}
+               local lol = {
+                  [1] = game:GetService("Players")[players.Name].Character.Humanoid,
+                  [2] = math.huge
+               }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+               game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
             end
          end
       else
          for i,v in pairs(game.Players:GetPlayers()) do
             if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
-local lol = {
-    [1] = game:GetService("Players")[v.Name].Character.Humanoid,
-    [2] = math.huge
-}
+               local lol = {
+                  [1] = game:GetService("Players")[v.Name].Character.Humanoid,
+                  [2] = math.huge
+               }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+               game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
             end
          end
       end
@@ -80,50 +80,50 @@ game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
    function Godmode(params)
       if params[2] == "all" then
          for _,v in pairs(game.Players:GetPlayers()) do
-local lol = {
-    [1] = game:GetService("Players")[v.Name].Character.Humanoid,
-    [2] = -math.huge
-}
+            local lol = {
+               [1] = game:GetService("Players")[v.Name].Character.Humanoid,
+               [2] = -math.huge
+            }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+            game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
          end
       elseif params[2] == "me" then
-local lol = {
-    [1] = game:GetService("Players").LocalPlayer.Character.Humanoid,
-    [2] = -math.huge
-}
+         local lol = {
+            [1] = game:GetService("Players").LocalPlayer.Character.Humanoid,
+            [2] = -math.huge
+         }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+         game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
       elseif params[2] == "others" then
          local plr = game.Players.LocalPlayer
          for _,others in pairs(game.Players:GetPlayers()) do
             if plr.Name ~= others.Name then
-local lol = {
-    [1] = game:GetService("Players")[others.Name].Character.Humanoid,
-    [2] = -math.huge
-}
+               local lol = {
+                  [1] = game:GetService("Players")[others.Name].Character.Humanoid,
+                  [2] = -math.huge
+               }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+               game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
             end
          end
       elseif params[2] == "random" then
          local getrandom = math.random(1, #game.Players:GetPlayers())
          local getplr = game.Players:GetPlayers()[getrandom]
-local lol = {
-    [1] = game:GetService("Players")[getplr.Name].Character.Humanoid,
-    [2] = -math.huge
-}
+         local lol = {
+            [1] = game:GetService("Players")[getplr.Name].Character.Humanoid,
+            [2] = -math.huge
+         }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+         game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
       else
          for i,v in pairs(game.Players:GetPlayers()) do
             if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
-local lol = {
-    [1] = game:GetService("Players")[v.Name].Character.Humanoid,
-    [2] = -math.huge
-}
+               local lol = {
+                  [1] = game:GetService("Players")[v.Name].Character.Humanoid,
+                  [2] = -math.huge
+               }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+               game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
             end
          end
       end
@@ -333,59 +333,59 @@ game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
    function GiveHP(params)
       if params[2] == "all" then
          for _,v in pairs(game.Players:GetPlayers()) do
-local getnumber = params[2]
-local number = -getnumber
-local lol = {
-    [1] = game:GetService("Players")[v.Name].Character.Humanoid,
-    [2] = number
-}
+            local getnumber = params[2]
+            local number = -getnumber
+            local lol = {
+               [1] = game:GetService("Players")[v.Name].Character.Humanoid,
+               [2] = number
+            }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+            game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
          end
       elseif params[2] == "me" then
-local getnumber = params[2]
-local number = -getnumber
-local lol = {
-    [1] = game:GetService("Players").LocalPlayer.Character.Humanoid,
-    [2] = number
-}
+         local getnumber = params[2]
+         local number = -getnumber
+         local lol = {
+            [1] = game:GetService("Players").LocalPlayer.Character.Humanoid,
+            [2] = number
+         }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+         game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
       elseif params[2] == "random" then
          local getrandom = math.random(1, #game.Players:GetPlayers())
          local getplr = game.Players:GetPlayers()[getrandom]
-local getnumber = params[2]
-local number = -getnumber
-local lol = {
-    [1] = game:GetService("Players")[getplr.Name].Character.Humanoid,
-    [2] = number
-}
+         local getnumber = params[2]
+         local number = -getnumber
+         local lol = {
+            [1] = game:GetService("Players")[getplr.Name].Character.Humanoid,
+            [2] = number
+         }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+         game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
       elseif params[2] == "others" then
          for _,v in pairs(game.Players:GetPlayers()) do
             if game.Players.LocalPlayer.Name ~= v.Name then
-local getnumber = params[2]
-local number = -getnumber
-local lol = {
-    [1] = game:GetService("Players")[v.Name].Character.Humanoid,
-    [2] = number
-}
+               local getnumber = params[2]
+               local number = -getnumber
+               local lol = {
+                  [1] = game:GetService("Players")[v.Name].Character.Humanoid,
+                  [2] = number
+               }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+               game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
             end
          end
       else
          for i,v in pairs(game.Players:GetPlayers()) do
             if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
-local getnumber = params[2]
-local number = -getnumber
-local lol = {
-    [1] = game:GetService("Players")[v.Name].Character.Humanoid,
-    [2] = number
-}
+               local getnumber = params[2]
+               local number = -getnumber
+               local lol = {
+                  [1] = game:GetService("Players")[v.Name].Character.Humanoid,
+                  [2] = number
+               }
 
-game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+               game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
             end
          end
       end
