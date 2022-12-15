@@ -437,6 +437,8 @@ if game.PlaceId == 9329726891 then
    end
    end)
 
+   game.Lighting.BlurEffect:Destroy()
+
    local properties = {
       Color = Color3.new(12, 255, 0);
       Font = Enum.Font.FredokaOne;
