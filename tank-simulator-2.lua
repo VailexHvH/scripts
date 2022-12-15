@@ -333,59 +333,59 @@ game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
    function GiveHP(params)
       if params[2] == "all" then
          for _,v in pairs(game.Players:GetPlayers()) do
-            local health = {
-               [1] = 0,
-               [2] = "Level4vest",
-               [3] = game:GetService("Players")[v.Name].Character.Humanoid,
-               [4] = params[3]
-            }
+local getnumber = params[2]
+local number = -getnumber
+local lol = {
+    [1] = game:GetService("Players")[v.Name].Character.Humanoid,
+    [2] = number
+}
 
-            game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
          end
       elseif params[2] == "me" then
-         local health = {
-            [1] = 0,
-            [2] = "Level4vest",
-            [3] = game:GetService("Players").LocalPlayer.Character.Humanoid,
-            [4] = params[3]
-         }
+local getnumber = params[2]
+local number = -getnumber
+local lol = {
+    [1] = game:GetService("Players").LocalPlayer.Character.Humanoid,
+    [2] = number
+}
 
-         game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
       elseif params[2] == "random" then
          local getrandom = math.random(1, #game.Players:GetPlayers())
          local getplr = game.Players:GetPlayers()[getrandom]
-         local health = {
-            [1] = 0,
-            [2] = "Level4vest",
-            [3] = game:GetService("Players")[getplr.Name].Character.Humanoid,
-            [4] = params[3]
-         }
+local getnumber = params[2]
+local number = -getnumber
+local lol = {
+    [1] = game:GetService("Players")[getplr.Name].Character.Humanoid,
+    [2] = number
+}
 
-         game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
       elseif params[2] == "others" then
          for _,v in pairs(game.Players:GetPlayers()) do
             if game.Players.LocalPlayer.Name ~= v.Name then
-               local health = {
-                  [1] = 0,
-                  [2] = "Level4vest",
-                  [3] = game:GetService("Players")[v.Name].Character.Humanoid,
-                  [4] = params[3]
-               }
+local getnumber = params[2]
+local number = -getnumber
+local lol = {
+    [1] = game:GetService("Players")[v.Name].Character.Humanoid,
+    [2] = number
+}
 
-               game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
             end
          end
       else
          for i,v in pairs(game.Players:GetPlayers()) do
             if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
-               local health = {
-                  [1] = 0,
-                  [2] = "Level4vest",
-                  [3] = game:GetService("Players")[v.Name].Character.Humanoid,
-                  [4] = params[3]
-               }
+local getnumber = params[2]
+local number = -getnumber
+local lol = {
+    [1] = game:GetService("Players")[v.Name].Character.Humanoid,
+    [2] = number
+}
 
-               game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
             end
          end
       end
@@ -400,8 +400,6 @@ game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
       properties.Text = "Commands:"
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/kill [Player] - Kill any player except players with godmode."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/givemoney [Amount] - Gives you money."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/tp [Player] - Teleports you to any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
@@ -424,8 +422,6 @@ game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
    local cmd = string.lower(args[1])
    if cmd == "/kill" then
       Kill(args)
-   elseif cmd == "/givemoney" then
-      GiveMoney(args)
    elseif cmd == "/tp" then
       Teleport(args)
    elseif cmd == "/god" then
