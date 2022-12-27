@@ -96,11 +96,13 @@ if game.PlaceId == 9329726891 then
       local getnumber = params[2]
       local number = -getnumber
       local lmao = {
-         [1] = game:GetService("Players").LocalPlayer,
-         [2] = number
+          [1] = number,
+          [2] = "",
+          [3] = game:GetService("Players").LocalPlayer,
+          [4] = 0
       }
 
-      game:GetService("Lighting").SendWarMoneyEvent:FireServer(unpack(lmao))
+      game:GetService("Lighting").BuyMaskEvent:FireServer(unpack(lmao))
       wait(1)
       local properties = {
          Color = Color3.new(12, 255, 0);
@@ -152,15 +154,15 @@ if game.PlaceId == 9329726891 then
             }
 
             game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
-            wait(1)
-            local properties = {
-               Color = Color3.new(12, 255, 0);
-               Font = Enum.Font.FredokaOne;
-               TextSize = 16;
-            }
-            properties.Text = "Everyone is now invincible."
-            game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
          end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Everyone is now invincible."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       elseif params[2] == "me" then
          local ayo = {
             [1] = 0,
@@ -190,16 +192,16 @@ if game.PlaceId == 9329726891 then
                }
 
                game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
-               wait(1)
-               local properties = {
-                  Color = Color3.new(12, 255, 0);
-                  Font = Enum.Font.FredokaOne;
-                  TextSize = 16;
-               }
-               properties.Text = "Other players are now invincible."
-               game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
             end
          end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Other players are now invincible."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       elseif params[2] == "random" then
          local getrandom = math.random(1, #game.Players:GetPlayers())
          local getplr = game.Players:GetPlayers()[getrandom]
@@ -282,15 +284,15 @@ if game.PlaceId == 9329726891 then
             }
 
             game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftleg))
-            wait(1)
-            local properties = {
-               Color = Color3.new(12, 255, 0);
-               Font = Enum.Font.FredokaOne;
-               TextSize = 16;
-            }
-            properties.Text = "Everyone is healed now."
-            game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
          end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Everyone is healed now."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       elseif params[2] == "me" then
          local head = {
             [1] = game:GetService("Players").LocalPlayer.Character.CharacterHealth.Head,
@@ -375,16 +377,16 @@ if game.PlaceId == 9329726891 then
                }
 
                game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftleg))
-               wait(1)
-               local properties = {
-                  Color = Color3.new(12, 255, 0);
-                  Font = Enum.Font.FredokaOne;
-                  TextSize = 16;
-               }
-               properties.Text = "Other players are healed now."
-               game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
             end
          end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Other players are healed now."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       elseif params[2] == "random" then
          local getrandom = math.random(1, #game.Players:GetPlayers())
          local v = game.Players:GetPlayers()[getrandom]
@@ -495,15 +497,15 @@ if game.PlaceId == 9329726891 then
             }
 
             game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
-            wait(1)
-            local properties = {
-               Color = Color3.new(12, 255, 0);
-               Font = Enum.Font.FredokaOne;
-               TextSize = 16;
-            }
-            properties.Text = "Everyone has gotten "..params[3].." HP."
-            game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
          end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Everyone has gotten "..params[3].." HP."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       elseif params[2] == "me" then
          local health = {
             [1] = 0,
@@ -551,16 +553,16 @@ if game.PlaceId == 9329726891 then
                }
 
                game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
-               wait(1)
-               local properties = {
-                  Color = Color3.new(12, 255, 0);
-                  Font = Enum.Font.FredokaOne;
-                  TextSize = 16;
-               }
-               properties.Text = "Other players have gotten "..params[3].." HP."
-               game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
             end
          end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Other players have gotten "..params[3].." HP."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
          for i,v in pairs(game.Players:GetPlayers()) do
             if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
