@@ -444,7 +444,7 @@ if game.PlaceId == 9329726891 then
       Heal(args)
    elseif cmd == "/givehp" then
       GiveHP(args)
-   elseif cmd == "/cmds" then
+   elseif cmd == "/cmds" or cmd == "/help" then
       CommandsList()
    elseif cmd == "/rejoin" or cmd == "/rj" then
       Rejoin()
