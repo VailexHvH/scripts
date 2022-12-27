@@ -495,6 +495,14 @@ game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
             }
 
             game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+wait(1)
+local properties = {
+   Color = Color3.new(12, 255, 0);
+   Font = Enum.Font.FredokaOne;
+   TextSize = 16;
+}
+properties.Text = "Everyone has gotten "..params[3].." HP."
+game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
          end
       elseif params[2] == "me" then
          local health = {
@@ -505,6 +513,14 @@ game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
          }
 
          game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+wait(1)
+local properties = {
+   Color = Color3.new(12, 255, 0);
+   Font = Enum.Font.FredokaOne;
+   TextSize = 16;
+}
+properties.Text = "You have gotten "..params[3].." HP."
+game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       elseif params[2] == "random" then
          local getrandom = math.random(1, #game.Players:GetPlayers())
          local getplr = game.Players:GetPlayers()[getrandom]
@@ -516,6 +532,14 @@ game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
          }
 
          game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+wait(1)
+local properties = {
+   Color = Color3.new(12, 255, 0);
+   Font = Enum.Font.FredokaOne;
+   TextSize = 16;
+}
+properties.Text = getplr.Name.." has gotten "..params[3].." HP."
+game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       elseif params[2] == "others" then
          for _,v in pairs(game.Players:GetPlayers()) do
             if game.Players.LocalPlayer.Name ~= v.Name then
@@ -527,6 +551,14 @@ game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
                }
 
                game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+wait(1)
+local properties = {
+   Color = Color3.new(12, 255, 0);
+   Font = Enum.Font.FredokaOne;
+   TextSize = 16;
+}
+properties.Text = "Other players have gotten "..params[3].." HP."
+game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
             end
          end
       else
@@ -540,6 +572,14 @@ game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
                }
 
                game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+wait(1)
+local properties = {
+   Color = Color3.new(12, 255, 0);
+   Font = Enum.Font.FredokaOne;
+   TextSize = 16;
+}
+properties.Text = v.Name.." has gotten "..params[3].." HP."
+game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
             end
          end
       end
