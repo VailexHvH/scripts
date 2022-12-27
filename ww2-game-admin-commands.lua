@@ -16,7 +16,7 @@ if game.PlaceId == 9329726891 then
                Font = Enum.Font.FredokaOne;
                TextSize = 16;
             }
-            properties.Text = "Everyone has been killed."
+            properties.Text = "Killing everyone..."
             game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
          end
       elseif params[2] == "me" then
@@ -66,7 +66,7 @@ if game.PlaceId == 9329726891 then
                   Font = Enum.Font.FredokaOne;
                   TextSize = 16;
                }
-               properties.Text = "Other players were killed."
+               properties.Text = "Killing other players..."
                game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
             end
          end
