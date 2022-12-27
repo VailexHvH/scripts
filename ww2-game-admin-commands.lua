@@ -411,7 +411,7 @@ if game.PlaceId == 9329726891 then
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/kill [Player] - Kill any player except players with godmode."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/givemoney [Amount] - Gives you money."
+      properties.Text = "/givemoney [Amount] (Aliases: addmoney, give) - Gives you money."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/tp [Player] - Teleports you to any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
@@ -434,7 +434,7 @@ if game.PlaceId == 9329726891 then
    local cmd = string.lower(args[1])
    if cmd == "/kill" then
       Kill(args)
-   elseif cmd == "/givemoney" then
+   elseif cmd == "/givemoney" or cmd == "/addmoney" or cmd == "/give" then
       GiveMoney(args)
    elseif cmd == "/tp" then
       Teleport(args)
