@@ -10,15 +10,15 @@ if game.PlaceId == 9329726891 then
             }
 
             game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
-            wait(1)
-            local properties = {
-               Color = Color3.new(12, 255, 0);
-               Font = Enum.Font.FredokaOne;
-               TextSize = 16;
-            }
-            properties.Text = "Killing everyone..."
-            game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
          end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Everyone has been killed."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       elseif params[2] == "me" then
          local ayo = {
             [1] = game:GetService("Players").LocalPlayer.Character.Humanoid,
@@ -60,16 +60,16 @@ if game.PlaceId == 9329726891 then
                }
 
                game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
-               wait(1)
-               local properties = {
-                  Color = Color3.new(12, 255, 0);
-                  Font = Enum.Font.FredokaOne;
-                  TextSize = 16;
-               }
-               properties.Text = "Killing other players..."
-               game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
             end
          end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Other players were killed."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
          for i,v in pairs(game.Players:GetPlayers()) do
             if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
