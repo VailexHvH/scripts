@@ -593,6 +593,7 @@ if game.PlaceId == 9329726891 then
          Font = Enum.Font.FredokaOne;
          TextSize = 16;
       }
+      wait(1)
       properties.Text = "Commands:"
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/kill [Player] - Kill any player except players with godmode."
@@ -609,10 +610,33 @@ if game.PlaceId == 9329726891 then
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/rejoin (Aliases: rj) - Rejoin."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/clearsky (Aliases: removesky) - Makes the sky clear."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
    function Rejoin()
       game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+   end
+
+   function ClearSky()
+      v = game.Lighting.Sky
+
+      local destroy = {
+          [1] = v,
+          [2] = 0,
+          [3] = 0,
+          [4] = 0
+      }
+
+      game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
+      wait(1)
+      local properties = {
+         Color = Color3.new(12, 255, 0);
+         Font = Enum.Font.FredokaOne;
+         TextSize = 16;
+      }
+      properties.Text = "Sky is clear now."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
@@ -634,6 +658,8 @@ if game.PlaceId == 9329726891 then
       CommandsList()
    elseif cmd == "/rejoin" or cmd == "/rj" then
       Rejoin()
+   elseif cmd == "/clearsky" or cmd == "/removesky" then
+      ClearSky()
    end
    end)
 
