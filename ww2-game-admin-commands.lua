@@ -610,7 +610,7 @@ if game.PlaceId == 9329726891 then
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/rejoin (Aliases: rj) - Rejoin."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/clearsky (Aliases: removesky) - Makes the sky clear."
+      properties.Text = "/clearsky (Aliases: removesky) - Makes the sky clear. (Serverside)"
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
