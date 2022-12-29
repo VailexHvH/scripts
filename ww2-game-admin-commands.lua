@@ -606,11 +606,11 @@ if game.PlaceId == 9329726891 then
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/heal [Player] - Heals any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/givehp [Player] [Amount] - Gives health to any player."
+      properties.Text = "/givehp [Player] [Amount] (Aliases: hp) - Gives health to any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/rejoin (Aliases: rj) - Rejoin."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/clearsky (Aliases: removesky) - Makes the sky clear. (Serverside)"
+      properties.Text = "/clearsky (Aliases: removesky, deletesky) - Makes the sky clear. (Serverside)"
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
@@ -652,13 +652,13 @@ if game.PlaceId == 9329726891 then
       Godmode(args)
    elseif cmd == "/heal" then
       Heal(args)
-   elseif cmd == "/givehp" then
+   elseif cmd == "/givehp" or cmd == "/hp" then
       GiveHP(args)
    elseif cmd == "/cmds" or cmd == "/help" then
       CommandsList()
    elseif cmd == "/rejoin" or cmd == "/rj" then
       Rejoin()
-   elseif cmd == "/clearsky" or cmd == "/removesky" then
+   elseif cmd == "/clearsky" or cmd == "/removesky" or cmd == "/deletesky" then
       ClearSky()
    end
    end)
