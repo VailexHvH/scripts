@@ -1,4 +1,4 @@
-if game.PlaceId == 11698235691 then
+if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 then
    --gameplaceid start
 
    function Kill(params)
