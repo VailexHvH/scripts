@@ -605,7 +605,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 then
    end
 
    function ClearSky()
-      v = game.Lighting.Sky
+      v = game.Lighting.Skies
 
       local destroy = {
           [1] = nil,
