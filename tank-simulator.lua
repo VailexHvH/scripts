@@ -143,6 +143,117 @@ if game.PlaceId == 9329726891 then
       end
    end
 
+   function GodKill(params)
+      if params[2] == "all" then
+         for i,v in pairs(game.Players:GetPlayers()) do
+            damn = v.Character.Humanoid
+
+            local destroy = {
+                [1] = damn,
+                [2] = 0,
+                [3] = 0,
+                [4] = 0
+            }
+
+            game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
+         end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Everyone has been killed."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      elseif params[2] == "me" then
+         damn = game.Players.LocalPlayer.Character.Humanoid
+
+         local destroy = {
+             [1] = damn,
+             [2] = 0,
+             [3] = 0,
+             [4] = 0
+         }
+
+         game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "You have been killed."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      elseif params[2] == "random" then
+         local getrandom = math.random(1, #game.Players:GetPlayers())
+         local getplr = game.Players:GetPlayers()[getrandom]
+         damn = getplr.Character.Humanoid
+
+         local destroy = {
+             [1] = damn,
+             [2] = 0,
+             [3] = 0,
+             [4] = 0
+         }
+
+         game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = getplr.Name.." has been killed."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      elseif params[2] == "others" then
+         for _,players in pairs(game.Players:GetPlayers()) do
+            if game.Players.LocalPlayer.Name ~= players.Name then
+               damn = players.Character.Humanoid
+
+               local destroy = {
+                   [1] = damn,
+                   [2] = 0,
+                   [3] = 0,
+                   [4] = 0
+               }
+
+               game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
+            end
+         end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Other players were killed."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      else
+         for i,v in pairs(game.Players:GetPlayers()) do
+            if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
+               damn = v.Character.Humanoid
+
+               local destroy = {
+                   [1] = damn,
+                   [2] = 0,
+                   [3] = 0,
+                   [4] = 0
+               }
+
+               game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
+               wait(1)
+               local properties = {
+                  Color = Color3.new(12, 255, 0);
+                  Font = Enum.Font.FredokaOne;
+                  TextSize = 16;
+               }
+               properties.Text = v.Name.." has been killed."
+               game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+            end
+         end
+      end
+   end
+
    function Godmode(params)
       if params[2] == "all" then
          for _,v in pairs(game.Players:GetPlayers()) do
@@ -596,7 +707,7 @@ if game.PlaceId == 9329726891 then
       wait(1)
       properties.Text = "Commands:"
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/kill [Player] - Kill any player except players with godmode."
+      properties.Text = "/kill [Player] - Kill any player(s) except players with godmode."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/givemoney [Amount] (Aliases: addmoney, give) - Gives you money."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
@@ -611,6 +722,8 @@ if game.PlaceId == 9329726891 then
       properties.Text = "/rejoin (Aliases: rj) - Rejoin."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/clearsky (Aliases: removesky, deletesky) - Makes the sky clear. (Serverside)"
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/godkill (Aliases: gkill) - Kill player(s) with godmode or without."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
@@ -644,6 +757,8 @@ if game.PlaceId == 9329726891 then
    local cmd = string.lower(args[1])
    if cmd == "/kill" then
       Kill(args)
+   elseif cmd == "/godkill" or cmd == "/gkill" then
+      GodKill(args)
    elseif cmd == "/givemoney" or cmd == "/addmoney" or cmd == "/give" then
       GiveMoney(args)
    elseif cmd == "/tp" then
