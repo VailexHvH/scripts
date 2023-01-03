@@ -717,6 +717,8 @@ if game.PlaceId == 9329726891 then
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/heal [Player] - Heals any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/speed [Amount] - Change your speed."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/givehp [Player] [Amount] (Aliases: hp) - Gives health to any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/rejoin (Aliases: rj) - Rejoin."
@@ -752,6 +754,25 @@ if game.PlaceId == 9329726891 then
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
+   function Speed(params)
+      if params[2] then
+         local walkSpeed = params[2]
+
+
+         local gmt = getrawmetatable(game)
+         setreadonly(gmt, false)
+         local oldindex = gmt.__index
+         gmt.__index = newcclosure(function(self,b)
+         if b == "WalkSpeed" then
+         return 16
+         end
+         return oldindex(self,b)
+         end)
+
+         game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed
+      end
+   end
+
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
    local cmd = string.lower(args[1])
@@ -767,6 +788,8 @@ if game.PlaceId == 9329726891 then
       Godmode(args)
    elseif cmd == "/heal" then
       Heal(args)
+   elseif cmd == "/speed" then
+      Speed(args)
    elseif cmd == "/givehp" or cmd == "/hp" then
       GiveHP(args)
    elseif cmd == "/cmds" or cmd == "/help" then
