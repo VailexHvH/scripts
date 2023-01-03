@@ -770,6 +770,14 @@ if game.PlaceId == 9329726891 then
          end)
 
          game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Your speed has been changed to "..params[2].."."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       end
    end
 
