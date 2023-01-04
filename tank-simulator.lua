@@ -1,8 +1,8 @@
 if game.PlaceId == 9329726891 then
    --gameplaceid start
-   
-   local findplr = function(plr)
-      for i,v in pairs(game.Players:GetPlayers()) do 
+
+   local function findplr(plr)
+      for i,v in pairs(game.Players:GetPlayers()) do
          if v.Name:lower():sub(1,#plr) == plr:lower() then
             return v;
          end
@@ -80,21 +80,21 @@ if game.PlaceId == 9329726891 then
          properties.Text = "Other players were killed."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
-local v = findplr(params[2])
-               local ayo = {
-                  [1] = game:GetService("Players")[v.Name].Character.Humanoid,
-                  [2] = math.huge
-               }
+         local v = findplr(params[2])
+         local ayo = {
+            [1] = game:GetService("Players")[v.Name].Character.Humanoid,
+            [2] = math.huge
+         }
 
-               game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
-               wait(1)
-               local properties = {
-                  Color = Color3.new(12, 255, 0);
-                  Font = Enum.Font.FredokaOne;
-                  TextSize = 16;
-               }
-               properties.Text = v.Name.." has been killed."
-               game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+         game:GetService("Lighting").knifeEvent:FireServer(unpack(ayo))
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = v.Name.." has been killed."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       end
    end
 
@@ -102,10 +102,10 @@ local v = findplr(params[2])
       local getnumber = params[2]
       local number = -getnumber
       local lmao = {
-          [1] = number,
-          [2] = "",
-          [3] = game:GetService("Players").LocalPlayer,
-          [4] = 0
+         [1] = number,
+         [2] = "",
+         [3] = game:GetService("Players").LocalPlayer,
+         [4] = 0
       }
 
       game:GetService("Lighting").BuyMaskEvent:FireServer(unpack(lmao))
@@ -133,16 +133,16 @@ local v = findplr(params[2])
          properties.Text = "Teleporting to "..getplr.Name.."."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
-local v = findplr(params[2])
-               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[v.Name].Character.HumanoidRootPart.CFrame
-               wait(1)
-               local properties = {
-                  Color = Color3.new(12, 255, 0);
-                  Font = Enum.Font.FredokaOne;
-                  TextSize = 16;
-               }
-               properties.Text = "Teleporting to "..v.Name.."."
-               game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+         local v = findplr(params[2])
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[v.Name].Character.HumanoidRootPart.CFrame
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Teleporting to "..v.Name.."."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       end
    end
 
@@ -152,10 +152,10 @@ local v = findplr(params[2])
             damn = v.Character.Humanoid
 
             local destroy = {
-                [1] = damn,
-                [2] = 0,
-                [3] = 0,
-                [4] = 0
+               [1] = damn,
+               [2] = 0,
+               [3] = 0,
+               [4] = 0
             }
 
             game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
@@ -172,10 +172,10 @@ local v = findplr(params[2])
          damn = game.Players.LocalPlayer.Character.Humanoid
 
          local destroy = {
-             [1] = damn,
-             [2] = 0,
-             [3] = 0,
-             [4] = 0
+            [1] = damn,
+            [2] = 0,
+            [3] = 0,
+            [4] = 0
          }
 
          game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
@@ -193,10 +193,10 @@ local v = findplr(params[2])
          damn = getplr.Character.Humanoid
 
          local destroy = {
-             [1] = damn,
-             [2] = 0,
-             [3] = 0,
-             [4] = 0
+            [1] = damn,
+            [2] = 0,
+            [3] = 0,
+            [4] = 0
          }
 
          game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
@@ -214,10 +214,10 @@ local v = findplr(params[2])
                damn = players.Character.Humanoid
 
                local destroy = {
-                   [1] = damn,
-                   [2] = 0,
-                   [3] = 0,
-                   [4] = 0
+                  [1] = damn,
+                  [2] = 0,
+                  [3] = 0,
+                  [4] = 0
                }
 
                game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
@@ -232,25 +232,25 @@ local v = findplr(params[2])
          properties.Text = "Other players were killed."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
-local v = findplr(params[2])
-               damn = v.Character.Humanoid
+         local v = findplr(params[2])
+         damn = v.Character.Humanoid
 
-               local destroy = {
-                   [1] = damn,
-                   [2] = 0,
-                   [3] = 0,
-                   [4] = 0
-               }
+         local destroy = {
+            [1] = damn,
+            [2] = 0,
+            [3] = 0,
+            [4] = 0
+         }
 
-               game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
-               wait(1)
-               local properties = {
-                  Color = Color3.new(12, 255, 0);
-                  Font = Enum.Font.FredokaOne;
-                  TextSize = 16;
-               }
-               properties.Text = v.Name.." has been killed."
-               game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+         game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = v.Name.." has been killed."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       end
    end
 
@@ -333,23 +333,23 @@ local v = findplr(params[2])
          properties.Text = getplr.Name.." is now invincible."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
-local v = findplr(params[2])
-               local ayo = {
-                  [1] = 0,
-                  [2] = "FaceShild",
-                  [3] = game:GetService("Players")[v.Name].Character.Humanoid,
-                  [4] = math.huge
-               }
+         local v = findplr(params[2])
+         local ayo = {
+            [1] = 0,
+            [2] = "FaceShild",
+            [3] = game:GetService("Players")[v.Name].Character.Humanoid,
+            [4] = math.huge
+         }
 
-               game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
-               wait(1)
-               local properties = {
-                  Color = Color3.new(12, 255, 0);
-                  Font = Enum.Font.FredokaOne;
-                  TextSize = 16;
-               }
-               properties.Text = v.Name.." is now invincible."
-               game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+         game:GetService("Lighting").BuyVestEvent:FireServer(unpack(ayo))
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = v.Name.." is now invincible."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       end
    end
 
@@ -543,51 +543,51 @@ local v = findplr(params[2])
          properties.Text = v.Name.." is healed now."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
-local v = findplr(params[2])
-               local head = {
-                  [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.Head,
-                  [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
-               }
+         local v = findplr(params[2])
+         local head = {
+            [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.Head,
+            [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+         }
 
-               game:GetService("Lighting").UseBandageEvent:FireServer(unpack(head))
-               local torso = {
-                  [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.Torso,
-                  [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
-               }
+         game:GetService("Lighting").UseBandageEvent:FireServer(unpack(head))
+         local torso = {
+            [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.Torso,
+            [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+         }
 
-               game:GetService("Lighting").UseBandageEvent:FireServer(unpack(torso))
-               local rightarm = {
-                  [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.RightArm,
-                  [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
-               }
+         game:GetService("Lighting").UseBandageEvent:FireServer(unpack(torso))
+         local rightarm = {
+            [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.RightArm,
+            [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+         }
 
-               game:GetService("Lighting").UseBandageEvent:FireServer(unpack(rightarm))
-               local leftarm = {
-                  [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.LeftArm,
-                  [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
-               }
+         game:GetService("Lighting").UseBandageEvent:FireServer(unpack(rightarm))
+         local leftarm = {
+            [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.LeftArm,
+            [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+         }
 
-               game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftarm))
-               local rightleg = {
-                  [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.RightLeg,
-                  [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
-               }
+         game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftarm))
+         local rightleg = {
+            [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.RightLeg,
+            [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+         }
 
-               game:GetService("Lighting").UseBandageEvent:FireServer(unpack(rightleg))
-               local leftleg = {
-                  [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.LeftLeg,
-                  [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
-               }
+         game:GetService("Lighting").UseBandageEvent:FireServer(unpack(rightleg))
+         local leftleg = {
+            [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.LeftLeg,
+            [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
+         }
 
-               game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftleg))
-               wait(1)
-               local properties = {
-                  Color = Color3.new(12, 255, 0);
-                  Font = Enum.Font.FredokaOne;
-                  TextSize = 16;
-               }
-               properties.Text = v.Name.." is healed now."
-               game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+         game:GetService("Lighting").UseBandageEvent:FireServer(unpack(leftleg))
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = v.Name.." is healed now."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       end
    end
 
@@ -669,23 +669,23 @@ local v = findplr(params[2])
          properties.Text = "Other players have gotten "..params[3].." HP."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
-local v = findplr(params[2])
-               local health = {
-                  [1] = 0,
-                  [2] = "FaceShild",
-                  [3] = game:GetService("Players")[v.Name].Character.Humanoid,
-                  [4] = params[3]
-               }
+         local v = findplr(params[2])
+         local health = {
+            [1] = 0,
+            [2] = "FaceShild",
+            [3] = game:GetService("Players")[v.Name].Character.Humanoid,
+            [4] = params[3]
+         }
 
-               game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
-               wait(1)
-               local properties = {
-                  Color = Color3.new(12, 255, 0);
-                  Font = Enum.Font.FredokaOne;
-                  TextSize = 16;
-               }
-               properties.Text = v.Name.." has gotten "..params[3].." HP."
-               game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+         game:GetService("Lighting").BuyVestEvent:FireServer(unpack(health))
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = v.Name.." has gotten "..params[3].." HP."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       end
    end
 
@@ -728,10 +728,10 @@ local v = findplr(params[2])
       v = game.Lighting.Sky
 
       local destroy = {
-          [1] = v,
-          [2] = 0,
-          [3] = 0,
-          [4] = 0
+         [1] = v,
+         [2] = 0,
+         [3] = 0,
+         [4] = 0
       }
 
       game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
@@ -755,7 +755,7 @@ local v = findplr(params[2])
          local oldindex = gmt.__index
          gmt.__index = newcclosure(function(self,b)
          if b == "WalkSpeed" then
-         return 16
+            return 16
          end
          return oldindex(self,b)
          end)
