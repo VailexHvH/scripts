@@ -1,5 +1,14 @@
 if game.PlaceId == 9329726891 then
    --gameplaceid start
+   
+   local findplr = function(plr)
+      for i,v in pairs(game.Players:GetPlayers()) do 
+         if v.Name:lower():sub(1,#plr) == plr:lower() then
+            return v;
+         end
+      end
+      return nil
+   end
 
    function Kill(params)
       if params[2] == "all" then
@@ -71,8 +80,7 @@ if game.PlaceId == 9329726891 then
          properties.Text = "Other players were killed."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
-         for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
+local v = findplr(params[2])
                local ayo = {
                   [1] = game:GetService("Players")[v.Name].Character.Humanoid,
                   [2] = math.huge
@@ -87,8 +95,6 @@ if game.PlaceId == 9329726891 then
                }
                properties.Text = v.Name.." has been killed."
                game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-            end
-         end
       end
    end
 
@@ -127,8 +133,7 @@ if game.PlaceId == 9329726891 then
          properties.Text = "Teleporting to "..getplr.Name.."."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
-         for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
+local v = findplr(params[2])
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[v.Name].Character.HumanoidRootPart.CFrame
                wait(1)
                local properties = {
@@ -138,8 +143,6 @@ if game.PlaceId == 9329726891 then
                }
                properties.Text = "Teleporting to "..v.Name.."."
                game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-            end
-         end
       end
    end
 
@@ -229,8 +232,7 @@ if game.PlaceId == 9329726891 then
          properties.Text = "Other players were killed."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
-         for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
+local v = findplr(params[2])
                damn = v.Character.Humanoid
 
                local destroy = {
@@ -249,8 +251,6 @@ if game.PlaceId == 9329726891 then
                }
                properties.Text = v.Name.." has been killed."
                game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-            end
-         end
       end
    end
 
@@ -333,8 +333,7 @@ if game.PlaceId == 9329726891 then
          properties.Text = getplr.Name.." is now invincible."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
-         for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
+local v = findplr(params[2])
                local ayo = {
                   [1] = 0,
                   [2] = "FaceShild",
@@ -351,8 +350,6 @@ if game.PlaceId == 9329726891 then
                }
                properties.Text = v.Name.." is now invincible."
                game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-            end
-         end
       end
    end
 
@@ -546,8 +543,7 @@ if game.PlaceId == 9329726891 then
          properties.Text = v.Name.." is healed now."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
-         for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
+local v = findplr(params[2])
                local head = {
                   [1] = game:GetService("Players")[v.Name].Character.CharacterHealth.Head,
                   [2] = game:GetService("Players")[v.Name].Character.CharacterHealth
@@ -592,8 +588,6 @@ if game.PlaceId == 9329726891 then
                }
                properties.Text = v.Name.." is healed now."
                game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-            end
-         end
       end
    end
 
@@ -675,8 +669,7 @@ if game.PlaceId == 9329726891 then
          properties.Text = "Other players have gotten "..params[3].." HP."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
-         for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
+local v = findplr(params[2])
                local health = {
                   [1] = 0,
                   [2] = "FaceShild",
@@ -693,8 +686,6 @@ if game.PlaceId == 9329726891 then
                }
                properties.Text = v.Name.." has gotten "..params[3].." HP."
                game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-            end
-         end
       end
    end
 
@@ -783,7 +774,7 @@ if game.PlaceId == 9329726891 then
 
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
-   local cmd = string.lower(args[1])
+   local cmd = args[1]:lower()
    if cmd == "/kill" then
       Kill(args)
    elseif cmd == "/godkill" or cmd == "/gkill" then
