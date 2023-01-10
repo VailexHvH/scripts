@@ -788,21 +788,17 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    end)
 
    pcall(function()
-      for _,gg in pairs(game.ReplicatedStorage.VoteKickGui:GetChildren()) do
-         if game.ReplicatedStorage.VoteKickGui.KickPlr.Name ~= gg.Name then
-            v = gg
+      local yesbutton = {
+          [1] = nil,
+          [2] = nil,
+          [3] = nil,
+          [4] = false,
+          [5] = game.ReplicatedStorage.VoteKickGui.Frame.YesButton,
+          [6] = 0
+      }
+      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(yesbutton))
+      wait(1)
 
-            local destroy = {
-                [1] = nil,
-                [2] = nil,
-                [3] = nil,
-                [4] = false,
-                [5] = v,
-                [6] = 0
-            }
-            game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
-         end
-      end
    end)
 
    local properties = {
