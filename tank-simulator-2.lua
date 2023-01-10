@@ -767,7 +767,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    elseif cmd == "/heal" then
       Heal(args)
    elseif cmd == "/setmoney" or cmd == "/moneyset" or cmd == "/setcash" or cmd == "/cashset" or cmd == "/setpoint" or cmd == "/pointset" or cmd == "/setpoints" or cmd == "/pointsset" then
-      SetMoney(args
+      SetMoney(args)
    elseif cmd == "/givehp" or cmd == "/hp" then
       GiveHP(args)
    elseif cmd == "/cmds" or cmd == "/help" then
