@@ -806,6 +806,33 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
           [6] = 0
       }
       game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(nobutton))
+      local madebyname = {
+          [1] = nil,
+          [2] = nil,
+          [3] = nil,
+          [4] = false,
+          [5] = game.ReplicatedStorage.VoteKickGui.Frame.MadeByName,
+          [6] = 0
+      }
+      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(madebyname))
+      local yescount = {
+          [1] = nil,
+          [2] = nil,
+          [3] = nil,
+          [4] = false,
+          [5] = game.ReplicatedStorage.VoteKickGui.Frame.YesCount,
+          [6] = 0
+      }
+      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(yescount))
+      local nocount = {
+          [1] = nil,
+          [2] = nil,
+          [3] = nil,
+          [4] = false,
+          [5] = game.ReplicatedStorage.VoteKickGui.Frame.NoCount,
+          [6] = 0
+      }
+      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(nocount))
    end)
 
    local properties = {
