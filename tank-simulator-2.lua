@@ -698,10 +698,20 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/clearsky (Aliases: removesky, deletesky) - Makes the sky clear. (Serverside)"
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/kick (Aliases: k) - Kick any player u want."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
    function Rejoin()
       game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+      wait(1)
+      local properties = {
+         Color = Color3.new(12, 255, 0);
+         Font = Enum.Font.FredokaOne;
+         TextSize = 16;
+      }
+      properties.Text = "Rejoining..."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
    function ClearSky()
@@ -726,6 +736,25 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
+   function Kick(params)
+      local plr = findplr(params[2])
+      local args = {
+         [1] = plr
+      }
+
+      game:GetService("ReplicatedStorage").VoteKickEvent:FireServer(unpack(args))
+      wait(1)
+      game:GetService("ReplicatedStorage").YesEvent:FireServer()
+      wait(10)
+      local properties = {
+         Color = Color3.new(12, 255, 0);
+         Font = Enum.Font.FredokaOne;
+         TextSize = 16;
+      }
+      properties.Text = "Kicked "..plr.Name..". You can use this command after 60 seconds."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+   end
+
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
    local cmd = string.lower(args[1])
@@ -747,13 +776,33 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       Rejoin()
    elseif cmd == "/clearsky" or cmd == "/removesky" or cmd == "/deletesky" then
       ClearSky()
+   elseif cmd == "/kick" or cmd == "/k" then
+      Kick(args)
    end
    end)
 
    game.RunService.Heartbeat:Connect(function()
-   pcall(function()
-   game.Lighting.BlurEffect.Size = 0
+      pcall(function()
+         game.Lighting.BlurEffect.Size = 0
+      end)
    end)
+
+   pcall(function()
+      for _,gg in pairs(game.ReplicatedStorage.VoteKickGui:GetChildren()) do
+         if game.ReplicatedStorage.VoteKickGui.KickPlr.Name ~= gg.Name then
+            v = gg
+
+            local destroy = {
+                [1] = nil,
+                [2] = nil,
+                [3] = nil,
+                [4] = false,
+                [5] = v,
+                [6] = 0
+            }
+            game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
+         end
+      end
    end)
 
    local properties = {
