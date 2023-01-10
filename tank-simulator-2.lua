@@ -1,5 +1,6 @@
 if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId == 12015736082 then
    --gameplaceid start
+   local prefix = "/"
 
    local function findplr(plr)
       for i,v in pairs(game.Players:GetPlayers()) do
@@ -682,23 +683,25 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       wait(1)
       properties.Text = "Commands:"
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/kill [Player] - Kill any player except players with godmode."
+      properties.Text = prefix.."kill [Player] - Kill any player except players with godmode."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/tp [Player] - Teleports you to any player."
+      properties.Text = prefix.."tp [Player] - Teleports you to any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/god [Player] - Gives godmode to any player."
+      properties.Text = prefix.."god [Player] - Gives godmode to any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/heal [Player] - Heals any player."
+      properties.Text = prefix.."heal [Player] - Heals any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/setmoney [Player] [Amount] (Aliases: moneyset, setcash, cashset, setpoint, pointset, setpoints, pointsset) - Set's any amount of points to any player u want."
+      properties.Text = prefix.."setmoney [Player] [Amount] (Aliases: moneyset, setcash, cashset, setpoint, pointset, setpoints, pointsset) - Set's any amount of points to any player u want."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/givehp [Player] [Amount] (Aliases: hp) - Gives health to any player."
+      properties.Text = prefix.."givehp [Player] [Amount] (Aliases: hp) - Gives health to any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/rejoin (Aliases: rj) - Rejoin."
+      properties.Text = prefix.."rejoin (Aliases: rj) - Rejoin."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/clearsky (Aliases: removesky, deletesky) - Makes the sky clear. (Serverside)"
+      properties.Text = prefix.."clearsky (Aliases: removesky, deletesky) - Makes the sky clear. (Serverside)"
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/kick (Aliases: k) - Kick any player u want."
+      properties.Text = prefix.."kick (Aliases: k) - Kick any player u want."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "!setprefix [Prefix] - Change the prefix of the commands."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
@@ -758,26 +761,28 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
    local cmd = string.lower(args[1])
-   if cmd == "/kill" then
+   if cmd == prefix.."kill" then
       Kill(args)
-   elseif cmd == "/tp" then
+   elseif cmd == prefix.."tp" then
       Teleport(args)
-   elseif cmd == "/god" then
+   elseif cmd == prefix.."god" then
       Godmode(args)
-   elseif cmd == "/heal" then
+   elseif cmd == prefix.."heal" then
       Heal(args)
-   elseif cmd == "/setmoney" or cmd == "/moneyset" or cmd == "/setcash" or cmd == "/cashset" or cmd == "/setpoint" or cmd == "/pointset" or cmd == "/setpoints" or cmd == "/pointsset" then
-      SetMoney(args)
-   elseif cmd == "/givehp" or cmd == "/hp" then
+   elseif cmd == prefix.."setmoney" or cmd == prefix.."moneyset" or cmd == prefix.."setcash" or cmd == prefix.."cashset" or cmd == prefix.."setpoint" or cmd == prefix.."pointset" or cmd == prefix.."setpoints" or cmd == prefix.."pointsset" then
+      SetMoney(args
+   elseif cmd == prefix.."givehp" or cmd == prefix.."hp" then
       GiveHP(args)
-   elseif cmd == "/cmds" or cmd == "/help" then
+   elseif cmd == prefix.."cmds" or cmd == prefix.."help" then
       CommandsList()
-   elseif cmd == "/rejoin" or cmd == "/rj" then
+   elseif cmd == prefix.."rejoin" or cmd == prefix.."rj" then
       Rejoin()
-   elseif cmd == "/clearsky" or cmd == "/removesky" or cmd == "/deletesky" then
+   elseif cmd == prefix.."clearsky" or cmd == prefix.."removesky" or cmd == prefix.."deletesky" then
       ClearSky()
-   elseif cmd == "/kick" or cmd == "/k" then
+   elseif cmd == prefix.."kick" or cmd == prefix.."k" then
       Kick(args)
+   elseif cmd == "!setprefix" then
+      local prefix = args[2]
    end
    end)
 
@@ -815,24 +820,6 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
           [6] = 0
       }
       game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(madebyname))
-      local yescount = {
-          [1] = nil,
-          [2] = nil,
-          [3] = nil,
-          [4] = false,
-          [5] = game.ReplicatedStorage.VoteKickGui.Frame.YesCount,
-          [6] = 0
-      }
-      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(yescount))
-      local nocount = {
-          [1] = nil,
-          [2] = nil,
-          [3] = nil,
-          [4] = false,
-          [5] = game.ReplicatedStorage.VoteKickGui.Frame.NoCount,
-          [6] = 0
-      }
-      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(nocount))
    end)
 
    local properties = {
