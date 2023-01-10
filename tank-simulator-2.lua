@@ -1,6 +1,15 @@
 if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId == 12015736082 then
    --gameplaceid start
 
+   local function findplr(plr)
+      for i,v in pairs(game.Players:GetPlayers()) do
+         if v.Name:lower():sub(1,#plr) == plr:lower() then
+            return v;
+         end
+      end
+      return nil
+   end
+
    function Kill(params)
       if params[2] == "all" then
          for i,v in pairs(game.Players:GetPlayers()) do
@@ -92,15 +101,23 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       end
    end
 
-   function GiveMoney(params)
-      local getnumber = params[2]
-      local number = -getnumber
-      local lmao = {
-         [1] = game:GetService("Players").LocalPlayer,
-         [2] = number
+   function SetMoney(params)
+if params[2] == "all" then
+for i,v in pairs(game.Players:GetPlayers()) do
+
+end
+wait(1)
+elseif params[2] == "me" then
+      local getnumber = params[3]
+      local number = getnumber
+      lolman = game.Players.LocalPlayer.leaderstats.Point
+
+      local set = {
+          [1] = lolman,
+          [2] = number
       }
 
-      game:GetService("Lighting").SendWarMoneyEvent:FireServer(unpack(lmao))
+      game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
       wait(1)
       local properties = {
          Color = Color3.new(12, 255, 0);
@@ -109,6 +126,13 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       }
       properties.Text = "You've got "..params[2].." Cash."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+elseif params[2] == "random" then
+
+elseif params[2] == "others" then
+
+else
+
+end
    end
 
    function Teleport(params)
@@ -592,6 +616,8 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/heal [Player] - Heals any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/setmoney [Player] [Amount] (Aliases: moneyset, setcash, cashset, setpoint, pointset, setpoints, pointsset) - Set's any amount of points to any player u want."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/givehp [Player] [Amount] (Aliases: hp) - Gives health to any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/rejoin (Aliases: rj) - Rejoin."
@@ -637,6 +663,8 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       Godmode(args)
    elseif cmd == "/heal" then
       Heal(args)
+   elseif cmd == "/setmoney" or cmd == "/moneyset" or cmd == "/setcash" or cmd == "/cashset" or cmd == "/setpoint" or cmd == "/pointset" or cmd == "/setpoints" or cmd == "/pointsset" then
+      SetMoney(args)
    elseif cmd == "/givehp" or cmd == "/hp" then
       GiveHP(args)
    elseif cmd == "/cmds" or cmd == "/help" then
