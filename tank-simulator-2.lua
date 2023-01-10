@@ -1,7 +1,7 @@
 if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId == 12015736082 then
    --gameplaceid start
 
-   local prefix = "/"
+   prefix = "/"
 
    local function findplr(plr)
       for i,v in pairs(game.Players:GetPlayers()) do
@@ -783,7 +783,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    elseif cmd == prefix.."kick" or cmd == prefix.."k" then
       Kick(args)
    elseif cmd == "!setprefix" then
-      local prefix = args[2]
+      prefix = args[2]
    end
    end)
 
