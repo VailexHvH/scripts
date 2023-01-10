@@ -797,8 +797,15 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
           [6] = 0
       }
       game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(yesbutton))
-      wait(1)
-
+      local nobutton = {
+          [1] = nil,
+          [2] = nil,
+          [3] = nil,
+          [4] = false,
+          [5] = game.ReplicatedStorage.VoteKickGui.Frame.NoButton,
+          [6] = 0
+      }
+      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(nobutton))
    end)
 
    local properties = {
