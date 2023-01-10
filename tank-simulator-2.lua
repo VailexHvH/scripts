@@ -102,111 +102,111 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    end
 
    function SetMoney(params)
-if params[2] == "all" then
-for i,v in pairs(game.Players:GetPlayers()) do
-      local getnumber = params[3]
-      local number = getnumber
-      lolman = v.leaderstats.Point
+      if params[2] == "all" then
+         for i,v in pairs(game.Players:GetPlayers()) do
+            local getnumber = params[3]
+            local number = getnumber
+            lolman = v.leaderstats.Point
 
-      local set = {
-          [1] = lolman,
-          [2] = number
-      }
+            local set = {
+               [1] = lolman,
+               [2] = number
+            }
 
-      game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
-end
-      wait(1)
-      local properties = {
-         Color = Color3.new(12, 255, 0);
-         Font = Enum.Font.FredokaOne;
-         TextSize = 16;
-      }
-      properties.Text = "Everyone's points have been set to "..params[3].."."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-elseif params[2] == "me" then
-      local getnumber = params[3]
-      local number = getnumber
-      lolman = game.Players.LocalPlayer.leaderstats.Point
+            game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
+         end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Everyone's points have been set to "..params[3].."."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      elseif params[2] == "me" then
+         local getnumber = params[3]
+         local number = getnumber
+         lolman = game.Players.LocalPlayer.leaderstats.Point
 
-      local set = {
-          [1] = lolman,
-          [2] = number
-      }
+         local set = {
+            [1] = lolman,
+            [2] = number
+         }
 
-      game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
-      wait(1)
-      local properties = {
-         Color = Color3.new(12, 255, 0);
-         Font = Enum.Font.FredokaOne;
-         TextSize = 16;
-      }
-      properties.Text = "Your points have been set to "..params[3].."."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-elseif params[2] == "random" then
-      local getrandom = math.random(1, #game.Players:GetPlayers())
-      local getplr = game.Players:GetPlayers()[getrandom]
-      local getnumber = params[3]
-      local number = getnumber
-      lolman = getplr.leaderstats.Point
+         game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Your points have been set to "..params[3].."."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      elseif params[2] == "random" then
+         local getrandom = math.random(1, #game.Players:GetPlayers())
+         local getplr = game.Players:GetPlayers()[getrandom]
+         local getnumber = params[3]
+         local number = getnumber
+         lolman = getplr.leaderstats.Point
 
-      local set = {
-          [1] = lolman,
-          [2] = number
-      }
+         local set = {
+            [1] = lolman,
+            [2] = number
+         }
 
-      game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
-      wait(1)
-      local properties = {
-         Color = Color3.new(12, 255, 0);
-         Font = Enum.Font.FredokaOne;
-         TextSize = 16;
-      }
-      properties.Text = getplr.Name.."'s points have been set to "..params[3].."."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-elseif params[2] == "others" then
-for i,v in pairs(game.Players:GetPlayers()) do
-if game.Players.LocalPlayer.Name ~= v.Name then
-      local getnumber = params[3]
-      local number = getnumber
-      lolman = v.leaderstats.Point
+         game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = getplr.Name.."'s points have been set to "..params[3].."."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      elseif params[2] == "others" then
+         for i,v in pairs(game.Players:GetPlayers()) do
+            if game.Players.LocalPlayer.Name ~= v.Name then
+               local getnumber = params[3]
+               local number = getnumber
+               lolman = v.leaderstats.Point
 
-      local set = {
-          [1] = lolman,
-          [2] = number
-      }
+               local set = {
+                  [1] = lolman,
+                  [2] = number
+               }
 
-      game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
-end
-end
-      wait(1)
-      local properties = {
-         Color = Color3.new(12, 255, 0);
-         Font = Enum.Font.FredokaOne;
-         TextSize = 16;
-      }
-      properties.Text = "Other Players points have been set to "..params[3].."."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-else
-      local player = findplr(params[2])
-      local getnumber = params[3]
-      local number = getnumber
-      lolman = player.leaderstats.Point
+               game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
+            end
+         end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Other Players points have been set to "..params[3].."."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      else
+         local player = findplr(params[2])
+         local getnumber = params[3]
+         local number = getnumber
+         lolman = player.leaderstats.Point
 
-      local set = {
-          [1] = lolman,
-          [2] = number
-      }
+         local set = {
+            [1] = lolman,
+            [2] = number
+         }
 
-      game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
-      wait(1)
-      local properties = {
-         Color = Color3.new(12, 255, 0);
-         Font = Enum.Font.FredokaOne;
-         TextSize = 16;
-      }
-      properties.Text = player.Name.."'s points have been set to "..params[3].."."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-end
+         game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = player.Name.."'s points have been set to "..params[3].."."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      end
    end
 
    function Teleport(params)
@@ -708,12 +708,12 @@ end
       v = game.Lighting.Skies
 
       local destroy = {
-          [1] = nil,
-          [2] = nil,
-          [3] = nil,
-          [4] = false,
-          [5] = v,
-          [6] = 0
+         [1] = nil,
+         [2] = nil,
+         [3] = nil,
+         [4] = false,
+         [5] = v,
+         [6] = 0
       }
       game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
       wait(1)
@@ -751,9 +751,9 @@ end
    end)
 
    game.RunService.Heartbeat:Connect(function()
-     pcall(function()
-       game.Lighting.BlurEffect.Size = 0
-     end)
+   pcall(function()
+   game.Lighting.BlurEffect.Size = 0
+   end)
    end)
 
    local properties = {
