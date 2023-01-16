@@ -132,18 +132,16 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    function Kill(params)
       if params[2] == "all" then
          for i,v in pairs(game.Players:GetPlayers()) do
-            v = path-here
-
-             local destroy = {
-    [1] = nil,
-    [2] = nil,
-    [3] = nil,
-    [4] = false,
-    [5] = v,
-    [6] = 0
-}
-game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
-
+            local destroy = {
+               [1] = nil,
+               [2] = nil,
+               [3] = nil,
+               [4] = false,
+               [5] = v.Character.Humanoid,
+               [6] = 0
+            }
+            game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
+         end
          wait(1)
          local properties = {
             Color = Color3.new(12, 255, 0);
@@ -170,12 +168,15 @@ game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
       elseif params[2] == "random" then
          local getrandom = math.random(1, #game.Players:GetPlayers())
          local getplr = game.Players:GetPlayers()[getrandom]
-         local lol = {
-            [1] = game:GetService("Players")[getplr.Name].Character.Humanoid,
-            [2] = math.huge
+         local destroy = {
+            [1] = nil,
+            [2] = nil,
+            [3] = nil,
+            [4] = false,
+            [5] = getplr.Character.Humanoid,
+            [6] = 0
          }
-
-         game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+         game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
          wait(1)
          local properties = {
             Color = Color3.new(12, 255, 0);
@@ -187,12 +188,15 @@ game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
       elseif params[2] == "others" then
          for _,players in pairs(game.Players:GetPlayers()) do
             if game.Players.LocalPlayer.Name ~= players.Name then
-               local lol = {
-                  [1] = game:GetService("Players")[players.Name].Character.Humanoid,
-                  [2] = math.huge
+               local destroy = {
+                  [1] = nil,
+                  [2] = nil,
+                  [3] = nil,
+                  [4] = false,
+                  [5] = players.Character.Humanoid,
+                  [6] = 0
                }
-
-               game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+               game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
             end
          end
          wait(1)
@@ -206,12 +210,15 @@ game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
       else
          for i,v in pairs(game.Players:GetPlayers()) do
             if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
-               local lol = {
-                  [1] = game:GetService("Players")[v.Name].Character.Humanoid,
-                  [2] = math.huge
+               local destroy = {
+                  [1] = nil,
+                  [2] = nil,
+                  [3] = nil,
+                  [4] = false,
+                  [5] = v.Character.Humanoid,
+                  [6] = 0
                }
-
-               game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
+               game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
                wait(1)
                local properties = {
                   Color = Color3.new(12, 255, 0);
