@@ -7,6 +7,14 @@ wait(1)
 properties.Text = "Destroying Server..."
 game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
 wait(1)
+for _,plr in pairs(game.Players:GetPlayers()) do
+local destroy = {
+    [1] = plr.leaderstats,
+    [2] = nil
+}
+game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(destroy))
+end
+wait(1)
 for _,t in pairs(game.Teams:GetChildren()) do
 local teams = {
     [1] = nil,
