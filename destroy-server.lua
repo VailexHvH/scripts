@@ -246,12 +246,29 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
+   function CommandsList()
+      local properties = {
+         Color = Color3.new(12, 255, 0);
+         Font = Enum.Font.FredokaOne;
+         TextSize = 16;
+      }
+      wait(1)
+      properties.Text = "Commands:"
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/kill [Player] - Kill any player except players with godmode."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/teleport [Player] (Aliases: tp, goto) - Teleports you to any player."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/rejoin (Aliases: rj) - Rejoin."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+   end
+
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
    local cmd = string.lower(args[1])
    if cmd == "/kill" then
       Kill(args)
-   elseif cmd == "/tp" then
+   elseif cmd == "/tp" or cmd == "/teleport" or cmd == "/goto" then
       Teleport(args)
    elseif cmd == "/cmds" or cmd == "/help" then
       CommandsList()
