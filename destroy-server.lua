@@ -19,14 +19,14 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    for _,plr in pairs(game.Players:GetPlayers()) do
       local points = {
          [1] = plr.leaderstats.Point,
-         [2] = 999999999999999
+         [2] = math.huge
       }
       game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(points))
    end
    for _,plr in pairs(game.Players:GetPlayers()) do
       local kills = {
          [1] = plr.leaderstats.Kill,
-         [2] = 999999999999999
+         [2] = math.huge
       }
       game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(kills))
    end
