@@ -13,6 +13,8 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    }
    properties.Text = "Server Destroyer. Made by Gerashino#8015"
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+   properties.Text = "Use /cmds to see all the commands."
+   game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    properties.Text = "Destroying Server..."
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    wait(1)
@@ -94,7 +96,62 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       }
       game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(players))
    end
-   wait(1)
    properties.Text = "Server has been successfully destroyed!"
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+
+   function Teleport(params)
+      if params[2] == "random" then
+         local getrandom = math.random(1, #game.Players:GetPlayers())
+         local getplr = game.Players:GetPlayers()[getrandom]
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[getplr.Name].Character.HumanoidRootPart.CFrame
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Teleporting to "..getplr.Name.."."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      else
+         for i,v in pairs(game.Players:GetPlayers()) do
+            if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
+               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[v.Name].Character.HumanoidRootPart.CFrame
+               wait(1)
+               local properties = {
+                  Color = Color3.new(12, 255, 0);
+                  Font = Enum.Font.FredokaOne;
+                  TextSize = 16;
+               }
+               properties.Text = "Teleporting to "..v.Name.."."
+               game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+            end
+         end
+      end
+   end
+
+   function Rejoin()
+      game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+      wait(1)
+      local properties = {
+         Color = Color3.new(12, 255, 0);
+         Font = Enum.Font.FredokaOne;
+         TextSize = 16;
+      }
+      properties.Text = "Rejoining..."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+   end
+
+   game.Players.LocalPlayer.Chatted:Connect(function(msg)
+   local args = string.split(msg," ")
+   local cmd = string.lower(args[1])
+   if cmd == "/kill" then
+      Kill(args)
+   elseif cmd == "/tp" then
+      Teleport(args)
+   elseif cmd == "/cmds" or cmd == "/help" then
+      CommandsList()
+   elseif cmd == "/rejoin" or cmd == "/rj" then
+      Rejoin()
+   end
+   end)
 end
