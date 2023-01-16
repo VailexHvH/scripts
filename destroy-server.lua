@@ -38,7 +38,6 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       }
       game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(groupid))
    end
-   wait(1)
    for _,t in pairs(game.Teams:GetChildren()) do
       local teams = {
          [1] = nil,
@@ -50,7 +49,6 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       }
       game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(teams))
    end
-   wait(1)
    for _,r in pairs(game.ReplicatedStorage:GetChildren()) do
       if game.ReplicatedStorage.DefaultChatSystemChatEvents.Name ~= r.Name and game.ReplicatedStorage.GroupAddEvent.Name ~= r.Name and game.ReplicatedStorage.ThrowGrenade.Name ~= r.Name then
          local remotes = {
@@ -64,7 +62,6 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
          game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(remotes))
       end
    end
-   wait(1)
    for _,script in pairs(game.ReplicatedFirst:GetChildren()) do
       local replicatedfirst = {
          [1] = nil,
@@ -76,7 +73,6 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       }
       game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(replicatedfirst))
    end
-   wait(1)
    for _,gui in pairs(game.StarterGui:GetChildren()) do
       local startergui = {
          [1] = nil,
@@ -88,7 +84,6 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       }
       game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(startergui))
    end
-   wait(1)
    for _,p in pairs(game.Players:GetPlayers()) do
       local players = {
          [1] = nil,
