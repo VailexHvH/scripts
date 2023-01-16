@@ -1,9 +1,12 @@
+if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId == 12015736082 then
 local properties = {
    Color = Color3.new(12, 255, 0);
    Font = Enum.Font.FredokaOne;
    TextSize = 16;
 }
 wait(1)
+properties.Text = "Made by Gerashino#8015"
+game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
 properties.Text = "Destroying Server..."
 game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
 wait(1)
@@ -67,3 +70,6 @@ local players = {
 game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(players))
 end
 wait(1)
+properties.Text = "The server has been successfully destroyed!"
+game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+end
