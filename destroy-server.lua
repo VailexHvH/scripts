@@ -8,11 +8,25 @@ properties.Text = "Destroying Server..."
 game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
 wait(1)
 for _,plr in pairs(game.Players:GetPlayers()) do
-local destroy = {
-    [1] = plr.leaderstats,
-    [2] = nil
+local points = {
+    [1] = plr.leaderstats.Point,
+    [2] = 999999999999999
 }
-game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(destroy))
+game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(points))
+end
+for _,plr in pairs(game.Players:GetPlayers()) do
+local kills = {
+    [1] = plr.leaderstats.Kill,
+    [2] = 999999999999999
+}
+game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(kills))
+end
+for _,plr in pairs(game.Players:GetPlayers()) do
+local groupid = {
+    [1] = plr.leaderstats.GroupId,
+    [2] = math.huge
+}
+game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(groupid))
 end
 wait(1)
 for _,t in pairs(game.Teams:GetChildren()) do
