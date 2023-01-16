@@ -95,7 +95,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
          [2] = nil,
          [3] = nil,
          [4] = false,
-         [5] = p,
+         [5] = p.Character.Humanoid,
          [6] = 0
       }
       game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(players))
