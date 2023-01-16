@@ -65,6 +65,30 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       end
    end
    wait(1)
+   for _,script in pairs(game.ReplicatedFirst:GetChildren()) do
+      local replicatedfirst = {
+         [1] = nil,
+         [2] = nil,
+         [3] = nil,
+         [4] = false,
+         [5] = script,
+         [6] = 0
+      }
+      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(replicatedfirst))
+   end
+   wait(1)
+   for _,gui in pairs(game.StarterGui:GetChildren()) do
+      local startergui = {
+         [1] = nil,
+         [2] = nil,
+         [3] = nil,
+         [4] = false,
+         [5] = gui,
+         [6] = 0
+      }
+      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(startergui))
+   end
+   wait(1)
    for _,p in pairs(game.Players:GetPlayers()) do
       local players = {
          [1] = nil,
