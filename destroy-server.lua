@@ -11,7 +11,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       Font = Enum.Font.FredokaOne;
       TextSize = 16;
    }
-   properties.Text = "Made by Gerashino#8015"
+   properties.Text = "Server Destroyer. Made by Gerashino#8015"
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    properties.Text = "Destroying Server..."
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
