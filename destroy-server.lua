@@ -70,6 +70,6 @@ local players = {
 game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(players))
 end
 wait(1)
-properties.Text = "The server has been successfully destroyed!"
+properties.Text = "Server has been successfully destroyed!"
 game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
 end
