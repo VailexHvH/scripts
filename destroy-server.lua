@@ -151,12 +151,14 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
          properties.Text = "Everyone has been killed."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       elseif params[2] == "me" then
-         local lol = {
-            [1] = game:GetService("Players").LocalPlayer.Character.Humanoid,
-            [2] = math.huge
+         local destroy = {
+            [1] = nil,
+            [2] = nil,
+            [3] = nil,
+            [4] = false,
+            [5] = game.Players.LocalPlayer.Character.Humanoid,
+            [6] = 0
          }
-
-         game:GetService("ReplicatedStorage").BleedEvent:FireServer(unpack(lol))
          wait(1)
          local properties = {
             Color = Color3.new(12, 255, 0);
