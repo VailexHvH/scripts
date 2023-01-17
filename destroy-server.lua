@@ -21,23 +21,23 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    for _,plr in pairs(game.Players:GetPlayers()) do
       local points = {
          [1] = plr.leaderstats.Point,
-         [2] = math.huge
+         [2] = ""..math.huge
       }
       game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(points))
    end
    for _,plr in pairs(game.Players:GetPlayers()) do
       local kills = {
          [1] = plr.leaderstats.Kill,
-         [2] = math.huge
+         [2] = ""..math.huge
       }
       game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(kills))
    end
    for _,plr in pairs(game.Players:GetPlayers()) do
-      local groupid = {
-         [1] = plr.leaderstats.GroupId,
-         [2] = math.huge
+      local wins = {
+         [1] = plr.leaderstats.Win,
+         [2] = ""..math.huge
       }
-      game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(groupid))
+      game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(wins))
    end
    for _,t in pairs(game.Teams:GetChildren()) do
       local teams = {
