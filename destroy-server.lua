@@ -100,7 +100,24 @@ game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(
    end
 
 for _,l in pairs(game.Lighting:GetChildren()) do
+main = game.Lighting
+file = l.Name
 
+allfnm = main[file]
+local args = {
+    [1] = main,
+    [2] = allfnm,
+    [3] = 0,
+    [4] = 0,
+    [5] = 0,
+    [6] = 0,
+    [7] = 0,
+    [8] = "",
+    [9] = allfnm,
+    [10] = main
+}
+
+game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
 end
 
    properties.Text = "Server has been successfully destroyed!"
