@@ -18,6 +18,26 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    properties.Text = "Destroying Server..."
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    wait(1)
+   for _,w in pairs(workspace:GetChildren()) do
+      main = workspace
+      file = w.Name
+
+      allfnm = main[file]
+      local args = {
+         [1] = main,
+         [2] = allfnm,
+         [3] = 0,
+         [4] = 0,
+         [5] = 0,
+         [6] = 0,
+         [7] = 0,
+         [8] = "",
+         [9] = allfnm,
+         [10] = main
+      }
+
+      game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
+   end
    for _,t in pairs(game.Teams:GetChildren()) do
       main = game.Teams
       file = t.Name
