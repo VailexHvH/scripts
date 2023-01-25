@@ -18,84 +18,91 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    properties.Text = "Destroying Server..."
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    wait(1)
-   for _,plr in pairs(game.Players:GetPlayers()) do
-      local points = {
-         [1] = plr.leaderstats.Point,
-         [2] = ""..math.huge
-      }
-      game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(points))
-   end
-   for _,plr in pairs(game.Players:GetPlayers()) do
-      local kills = {
-         [1] = plr.leaderstats.Kill,
-         [2] = ""..math.huge
-      }
-      game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(kills))
-   end
-   for _,plr in pairs(game.Players:GetPlayers()) do
-      local wins = {
-         [1] = plr.leaderstats.Win,
-         [2] = ""..math.huge
-      }
-      game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(wins))
-   end
    for _,t in pairs(game.Teams:GetChildren()) do
-      local teams = {
-         [1] = nil,
-         [2] = nil,
-         [3] = nil,
-         [4] = false,
-         [5] = t,
-         [6] = 0
-      }
-      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(teams))
+main = game.Teams
+file = t.Name
+
+allfnm = main[file]
+local args = {
+    [1] = main,
+    [2] = allfnm,
+    [3] = 0,
+    [4] = 0,
+    [5] = 0,
+    [6] = 0,
+    [7] = 0,
+    [8] = "",
+    [9] = allfnm,
+    [10] = main
+}
+
+game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
    end
-   for _,r in pairs(game.ReplicatedStorage:GetChildren()) do
-      if game.ReplicatedStorage.DefaultChatSystemChatEvents.Name ~= r.Name and game.ReplicatedStorage.GroupAddEvent.Name ~= r.Name and game.ReplicatedStorage.ThrowGrenade.Name ~= r.Name then
-         local remotes = {
-            [1] = nil,
-            [2] = nil,
-            [3] = nil,
-            [4] = false,
-            [5] = r,
-            [6] = 0
-         }
-         game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(remotes))
-      end
-   end
+
+main = game.ReplicatedStorage
+file = "VoteKickGui"
+
+allfnm = main[file]
+local args = {
+    [1] = main,
+    [2] = allfnm,
+    [3] = 0,
+    [4] = 0,
+    [5] = 0,
+    [6] = 0,
+    [7] = 0,
+    [8] = "",
+    [9] = allfnm,
+    [10] = main
+}
+
+game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
+
    for _,script in pairs(game.ReplicatedFirst:GetChildren()) do
-      local replicatedfirst = {
-         [1] = nil,
-         [2] = nil,
-         [3] = nil,
-         [4] = false,
-         [5] = script,
-         [6] = 0
-      }
-      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(replicatedfirst))
+main = game.ReplicatedFirst
+file = script.Name
+
+allfnm = main[file]
+local args = {
+    [1] = main,
+    [2] = allfnm,
+    [3] = 0,
+    [4] = 0,
+    [5] = 0,
+    [6] = 0,
+    [7] = 0,
+    [8] = "",
+    [9] = allfnm,
+    [10] = main
+}
+
+game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
    end
    for _,gui in pairs(game.StarterGui:GetChildren()) do
-      local startergui = {
-         [1] = nil,
-         [2] = nil,
-         [3] = nil,
-         [4] = false,
-         [5] = gui,
-         [6] = 0
-      }
-      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(startergui))
+main = game.StarterGui
+file = gui.Name
+
+allfnm = main[file]
+local args = {
+    [1] = main,
+    [2] = allfnm,
+    [3] = 0,
+    [4] = 0,
+    [5] = 0,
+    [6] = 0,
+    [7] = 0,
+    [8] = "",
+    [9] = allfnm,
+    [10] = main
+}
+
+game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
    end
-   for _,p in pairs(game.Players:GetPlayers()) do
-      local players = {
-         [1] = nil,
-         [2] = nil,
-         [3] = nil,
-         [4] = false,
-         [5] = p.Character.Humanoid,
-         [6] = 0
-      }
-      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(players))
-   end
+
+for _,l in pairs(game.Lighting:GetChildren()) do
+
+end
+
    properties.Text = "Server has been successfully destroyed!"
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
 
@@ -129,111 +136,6 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       end
    end
 
-   function Kill(params)
-      if params[2] == "all" then
-         for i,v in pairs(game.Players:GetPlayers()) do
-            local destroy = {
-               [1] = nil,
-               [2] = nil,
-               [3] = nil,
-               [4] = false,
-               [5] = v.Character.Humanoid,
-               [6] = 0
-            }
-            game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
-         end
-         wait(1)
-         local properties = {
-            Color = Color3.new(12, 255, 0);
-            Font = Enum.Font.FredokaOne;
-            TextSize = 16;
-         }
-         properties.Text = "Everyone has been killed."
-         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      elseif params[2] == "me" then
-         local destroy = {
-            [1] = nil,
-            [2] = nil,
-            [3] = nil,
-            [4] = false,
-            [5] = game.Players.LocalPlayer.Character.Humanoid,
-            [6] = 0
-         }
-         wait(1)
-         local properties = {
-            Color = Color3.new(12, 255, 0);
-            Font = Enum.Font.FredokaOne;
-            TextSize = 16;
-         }
-         properties.Text = "You have been killed."
-         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      elseif params[2] == "random" then
-         local getrandom = math.random(1, #game.Players:GetPlayers())
-         local getplr = game.Players:GetPlayers()[getrandom]
-         local destroy = {
-            [1] = nil,
-            [2] = nil,
-            [3] = nil,
-            [4] = false,
-            [5] = getplr.Character.Humanoid,
-            [6] = 0
-         }
-         game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
-         wait(1)
-         local properties = {
-            Color = Color3.new(12, 255, 0);
-            Font = Enum.Font.FredokaOne;
-            TextSize = 16;
-         }
-         properties.Text = getplr.Name.." has been killed."
-         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      elseif params[2] == "others" then
-         for _,players in pairs(game.Players:GetPlayers()) do
-            if game.Players.LocalPlayer.Name ~= players.Name then
-               local destroy = {
-                  [1] = nil,
-                  [2] = nil,
-                  [3] = nil,
-                  [4] = false,
-                  [5] = players.Character.Humanoid,
-                  [6] = 0
-               }
-               game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
-            end
-         end
-         wait(1)
-         local properties = {
-            Color = Color3.new(12, 255, 0);
-            Font = Enum.Font.FredokaOne;
-            TextSize = 16;
-         }
-         properties.Text = "Other players were killed."
-         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      else
-         for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
-               local destroy = {
-                  [1] = nil,
-                  [2] = nil,
-                  [3] = nil,
-                  [4] = false,
-                  [5] = v.Character.Humanoid,
-                  [6] = 0
-               }
-               game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(destroy))
-               wait(1)
-               local properties = {
-                  Color = Color3.new(12, 255, 0);
-                  Font = Enum.Font.FredokaOne;
-                  TextSize = 16;
-               }
-               properties.Text = v.Name.." has been killed."
-               game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-            end
-         end
-      end
-   end
-
    function Rejoin()
       game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
       wait(1)
@@ -255,8 +157,6 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       wait(1)
       properties.Text = "Commands:"
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/kill [Player] - Kill any player except players with godmode."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/teleport [Player] (Aliases: tp, goto) - Teleports you to any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/rejoin (Aliases: rj) - Rejoin."
@@ -266,9 +166,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
    local cmd = string.lower(args[1])
-   if cmd == "/kill" then
-      Kill(args)
-   elseif cmd == "/tp" or cmd == "/teleport" or cmd == "/goto" then
+   if cmd == "/tp" or cmd == "/teleport" or cmd == "/goto" then
       Teleport(args)
    elseif cmd == "/cmds" or cmd == "/help" then
       CommandsList()
