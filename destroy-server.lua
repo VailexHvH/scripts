@@ -19,106 +19,106 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    wait(1)
    for _,t in pairs(game.Teams:GetChildren()) do
-main = game.Teams
-file = t.Name
+      main = game.Teams
+      file = t.Name
 
-allfnm = main[file]
-local args = {
-    [1] = main,
-    [2] = allfnm,
-    [3] = 0,
-    [4] = 0,
-    [5] = 0,
-    [6] = 0,
-    [7] = 0,
-    [8] = "",
-    [9] = allfnm,
-    [10] = main
-}
+      allfnm = main[file]
+      local args = {
+         [1] = main,
+         [2] = allfnm,
+         [3] = 0,
+         [4] = 0,
+         [5] = 0,
+         [6] = 0,
+         [7] = 0,
+         [8] = "",
+         [9] = allfnm,
+         [10] = main
+      }
 
-game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
+      game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
    end
 
-main = game.ReplicatedStorage
-file = "VoteKickGui"
+   main = game.ReplicatedStorage
+   file = "VoteKickGui"
 
-allfnm = main[file]
-local args = {
-    [1] = main,
-    [2] = allfnm,
-    [3] = 0,
-    [4] = 0,
-    [5] = 0,
-    [6] = 0,
-    [7] = 0,
-    [8] = "",
-    [9] = allfnm,
-    [10] = main
-}
+   allfnm = main[file]
+   local args = {
+      [1] = main,
+      [2] = allfnm,
+      [3] = 0,
+      [4] = 0,
+      [5] = 0,
+      [6] = 0,
+      [7] = 0,
+      [8] = "",
+      [9] = allfnm,
+      [10] = main
+   }
 
-game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
+   game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
 
    for _,script in pairs(game.ReplicatedFirst:GetChildren()) do
-main = game.ReplicatedFirst
-file = script.Name
+      main = game.ReplicatedFirst
+      file = script.Name
 
-allfnm = main[file]
-local args = {
-    [1] = main,
-    [2] = allfnm,
-    [3] = 0,
-    [4] = 0,
-    [5] = 0,
-    [6] = 0,
-    [7] = 0,
-    [8] = "",
-    [9] = allfnm,
-    [10] = main
-}
+      allfnm = main[file]
+      local args = {
+         [1] = main,
+         [2] = allfnm,
+         [3] = 0,
+         [4] = 0,
+         [5] = 0,
+         [6] = 0,
+         [7] = 0,
+         [8] = "",
+         [9] = allfnm,
+         [10] = main
+      }
 
-game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
+      game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
    end
    for _,gui in pairs(game.StarterGui:GetChildren()) do
-main = game.StarterGui
-file = gui.Name
+      main = game.StarterGui
+      file = gui.Name
 
-allfnm = main[file]
-local args = {
-    [1] = main,
-    [2] = allfnm,
-    [3] = 0,
-    [4] = 0,
-    [5] = 0,
-    [6] = 0,
-    [7] = 0,
-    [8] = "",
-    [9] = allfnm,
-    [10] = main
-}
+      allfnm = main[file]
+      local args = {
+         [1] = main,
+         [2] = allfnm,
+         [3] = 0,
+         [4] = 0,
+         [5] = 0,
+         [6] = 0,
+         [7] = 0,
+         [8] = "",
+         [9] = allfnm,
+         [10] = main
+      }
 
-game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
+      game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
    end
 
-for _,l in pairs(game.Lighting:GetChildren()) do
-main = game.Lighting
-file = l.Name
+   for _,l in pairs(game.Lighting:GetChildren()) do
+      main = game.Lighting
+      file = l.Name
 
-allfnm = main[file]
-local args = {
-    [1] = main,
-    [2] = allfnm,
-    [3] = 0,
-    [4] = 0,
-    [5] = 0,
-    [6] = 0,
-    [7] = 0,
-    [8] = "",
-    [9] = allfnm,
-    [10] = main
-}
+      allfnm = main[file]
+      local args = {
+         [1] = main,
+         [2] = allfnm,
+         [3] = 0,
+         [4] = 0,
+         [5] = 0,
+         [6] = 0,
+         [7] = 0,
+         [8] = "",
+         [9] = allfnm,
+         [10] = main
+      }
 
-game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
-end
+      game:GetService("ReplicatedStorage").AntiTankMissileFireEvent:FireServer(unpack(args))
+   end
 
    properties.Text = "Server has been successfully destroyed!"
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
