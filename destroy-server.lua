@@ -1,4 +1,4 @@
-if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId == 12015736082 or game.PlaceId == 12173240994 then
+if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId == 12173240994 then
    game:GetService("StarterGui"):SetCore("SendNotification",
    {
       Title = "Server Destroyer",
