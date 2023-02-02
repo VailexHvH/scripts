@@ -941,27 +941,27 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
    local cmd = string.lower(args[1])
-   if cmd == "/kill" then
+   if cmd == ":kill" then
       Kill(args)
-   elseif cmd == "/tp" then
+   elseif cmd == ":tp" then
       Teleport(args)
-   elseif cmd == "/god" then
+   elseif cmd == ":god" then
       Godmode(args)
-   elseif cmd == "/heal" then
+   elseif cmd == ":heal" then
       Heal(args)
-   elseif cmd == "/setmoney" or cmd == "/moneyset" or cmd == "/setcash" or cmd == "/cashset" or cmd == "/setpoint" or cmd == "/pointset" or cmd == "/setpoints" or cmd == "/pointsset" then
+   elseif cmd == ":setmoney" or cmd == ":moneyset" or cmd == ":setcash" or cmd == ":cashset" or cmd == ":setpoint" or cmd == ":pointset" or cmd == ":setpoints" or cmd == ":pointsset" then
       SetMoney(args)
-   elseif cmd == "/givehp" or cmd == "/hp" then
+   elseif cmd == ":givehp" or cmd == ":hp" then
       GiveHP(args)
-   elseif cmd == "/cmds" or cmd == "/help" then
+   elseif cmd == ":cmds" or cmd == ":help" then
       CommandsList()
-   elseif cmd == "/rejoin" or cmd == "/rj" then
+   elseif cmd == ":rejoin" or cmd == ":rj" then
       Rejoin()
-   elseif cmd == "/clearsky" or cmd == "/removesky" or cmd == "/deletesky" then
+   elseif cmd == ":clearsky" or cmd == ":removesky" or cmd == ":deletesky" then
       ClearSky()
-   elseif cmd == "/ban" or cmd == "/serverban" or cmd == "/sban" then
+   elseif cmd == ":ban" or cmd == ":serverban" or cmd == ":sban" then
       Ban(args)
-   elseif cmd == "/kick" or cmd == "/k" then
+   elseif cmd == ":kick" or cmd == ":k" then
       Kick(args)
    end
    end)
@@ -1016,7 +1016,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    }
    )
 
-   properties.Text = "Script is now running! Use /cmds to see every command. Made by Gerashino#8015"
+   properties.Text = "Script is now running! Use :cmds to see every command. Made by Gerashino#8015"
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
 
    --gameplaceid end
