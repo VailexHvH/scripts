@@ -214,6 +214,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
 end
 
 if game.PlaceId == 9329726891 then
+pcall(function()
    game:GetService("StarterGui"):SetCore("SendNotification",
    {
       Title = "Server Destroyer",
@@ -273,4 +274,5 @@ if game.PlaceId == 9329726891 then
 
    properties.Text = "Server has been successfully destroyed!"
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+end)
 end
