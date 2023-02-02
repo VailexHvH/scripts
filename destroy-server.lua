@@ -421,6 +421,8 @@ elseif game.PlaceId == 12015736082 then
       wait(1)
       properties.Text = "Commands:"
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/kick [Player] (Aliases: k) - Kick player(s)."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/teleport [Player] (Aliases: tp, goto) - Teleports you to any player."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/rejoin (Aliases: rj) - Rejoin."
@@ -430,7 +432,9 @@ elseif game.PlaceId == 12015736082 then
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
    local cmd = string.lower(args[1])
-   if cmd == "/tp" or cmd == "/teleport" or cmd == "/goto" then
+   if cmd == "/kick" or cmd == "/k" then
+      Kick(args)
+   elseif cmd == "/tp" or cmd == "/teleport" or cmd == "/goto" then
       Teleport(args)
    elseif cmd == "/cmds" or cmd == "/help" then
       CommandsList()
