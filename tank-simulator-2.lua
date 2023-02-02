@@ -929,7 +929,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
 
          game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
       end
-
+      wait(1)
       for _,p in pairs(game.Players:GetPlayers()) do
          if game.Players.LocalPlayer.Name ~= p.Name then
             local yeah = {
@@ -939,12 +939,8 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
             game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
          end
       end
-      wait(2)
-      local yeah = {
-         [1] = game.Players.LocalPlayer
-      }
-
-      game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+      wait(3)
+      game.Players.LocalPlayer:Kick("Shutdown.")
    end
 
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
