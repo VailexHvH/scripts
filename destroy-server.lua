@@ -233,35 +233,35 @@ elseif game.PlaceId == 12015736082 then
    wait(1)
    for _,w in pairs(workspace:GetChildren()) do
       local yeah = {
-          [1] = w
+         [1] = w
       }
 
       game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
    end
    for _,t in pairs(game.Teams:GetChildren()) do
       local yeah = {
-          [1] = t
+         [1] = t
       }
 
       game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
    end
 
    local yeah = {
-       [1] = game.ReplicatedStorage.VoteKickGui
+      [1] = game.ReplicatedStorage.VoteKickGui
    }
 
    game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
 
    for _,script in pairs(game.ReplicatedFirst:GetChildren()) do
       local yeah = {
-          [1] = script
+         [1] = script
       }
 
       game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
    end
    for _,gui in pairs(game.StarterGui:GetChildren()) do
       local yeah = {
-          [1] = gui
+         [1] = gui
       }
 
       game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
@@ -269,7 +269,7 @@ elseif game.PlaceId == 12015736082 then
 
    for _,l in pairs(game.Lighting:GetChildren()) do
       local yeah = {
-          [1] = l
+         [1] = l
       }
 
       game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
@@ -316,16 +316,16 @@ elseif game.PlaceId == 12015736082 then
          end
       end
    end
-  
+
    function Kick(pr)
       if pr[2] == "all" then
          for _,v in pairs(game.Players:GetPlayers()) do
-      local yeah = {
-          [1] = v
-      }
+            local yeah = {
+               [1] = v
+            }
 
-      game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
-          end
+            game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+         end
          wait(1)
          local properties = {
             Color = Color3.new(12, 255, 0);
@@ -335,12 +335,12 @@ elseif game.PlaceId == 12015736082 then
          properties.Text = "Everyone has been kicked."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       elseif pr[2] == "me" then
-      local yeah = {
-          [1] = game.Players.LocalPlayer
-      }
+         local yeah = {
+            [1] = game.Players.LocalPlayer
+         }
 
-      game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
-wait(1)
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+         wait(1)
          local properties = {
             Color = Color3.new(12, 255, 0);
             Font = Enum.Font.FredokaOne;
@@ -349,16 +349,16 @@ wait(1)
          properties.Text = "You have been kicked."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       elseif pr[2] == "others" then
-for _,v in pairs(game.Players:GetPlayers()) do
-if game.Players.LocalPlayer.Name ~= v.Name then
-      local yeah = {
-          [1] = v
-      }
+         for _,v in pairs(game.Players:GetPlayers()) do
+            if game.Players.LocalPlayer.Name ~= v.Name then
+               local yeah = {
+                  [1] = v
+               }
 
-      game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
-end
-end
-wait(1)
+               game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+            end
+         end
+         wait(1)
          local properties = {
             Color = Color3.new(12, 255, 0);
             Font = Enum.Font.FredokaOne;
@@ -367,9 +367,9 @@ wait(1)
          properties.Text = "Other Players were kicked."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       elseif pr[2] == "random" then
-local getrandom = math.random(1, #game.Players:GetPlayers())
-local plr = game.Players:GetPlayers()[getrandom]
-wait(1)
+         local getrandom = math.random(1, #game.Players:GetPlayers())
+         local plr = game.Players:GetPlayers()[getrandom]
+         wait(1)
          local properties = {
             Color = Color3.new(12, 255, 0);
             Font = Enum.Font.FredokaOne;
@@ -377,14 +377,14 @@ wait(1)
          }
          properties.Text = plr.Name.." has been kicked."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      local yeah = {
-          [1] = plr
-      }
+         local yeah = {
+            [1] = plr
+         }
 
-      game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
       else
-      local plr = findplr(pr[2])
-wait(1)
+         local plr = findplr(pr[2])
+         wait(1)
          local properties = {
             Color = Color3.new(12, 255, 0);
             Font = Enum.Font.FredokaOne;
@@ -392,11 +392,11 @@ wait(1)
          }
          properties.Text = plr.Name.." has been kicked."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      local yeah = {
-          [1] = plr
-      }
+         local yeah = {
+            [1] = plr
+         }
 
-      game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
       end
    end
 
@@ -458,40 +458,40 @@ elseif game.PlaceId == 9329726891 then
    wait(1)
    for _,w in pairs(workspace:GetChildren()) do
       local destroy = {
-          [1] = w,
-          [2] = 0,
-          [3] = 0,
-          [4] = 0
+         [1] = w,
+         [2] = 0,
+         [3] = 0,
+         [4] = 0
       }
 
       game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
    end
    for _,g in pairs(game.StarterGui:GetChildren()) do
       local destroy = {
-          [1] = g,
-          [2] = 0,
-          [3] = 0,
-          [4] = 0
+         [1] = g,
+         [2] = 0,
+         [3] = 0,
+         [4] = 0
       }
 
       game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
    end
    for _,t in pairs(game.Teams:GetChildren()) do
       local destroy = {
-          [1] = t,
-          [2] = 0,
-          [3] = 0,
-          [4] = 0
+         [1] = t,
+         [2] = 0,
+         [3] = 0,
+         [4] = 0
       }
 
       game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
    end
 
    local destroy = {
-       [1] = game.Lighting.Sky,
-       [2] = 0,
-       [3] = 0,
-       [4] = 0
+      [1] = game.Lighting.Sky,
+      [2] = 0,
+      [3] = 0,
+      [4] = 0
    }
 
    game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
