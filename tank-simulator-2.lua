@@ -819,6 +819,61 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       end
    end
 
+   function Ban(pr)
+      if pr[2] == "random" then
+         local getrandom = math.random(1, #game.Players:GetPlayers())
+         local bro = game.Players:GetPlayers()[getrandom]
+         game.Players.PlayerAdded:Connect(function(plr)
+            if plr.Name == bro.Name then
+               local yeah = {
+                  [1] = plr
+               }
+
+               game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+               print(plr.Name.." tried to join."
+            end
+         end)
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = bro.Name.." has been banned."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+         local yeah = {
+            [1] = bro
+         }
+
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+      else
+         local guy = findplr(pr[2])
+         game.Players.PlayerAdded:Connect(function(plr)
+            if plr.Name == guy.Name then
+               local yeah = {
+                  [1] = plr
+               }
+
+               game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+               print(plr.Name.." tried to join."
+            end
+         end)
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = guy.Name.." has been kicked."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+         local yeah = {
+            [1] = guy
+         }
+
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+      end
+   end
+
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
    local cmd = string.lower(args[1])
@@ -840,6 +895,8 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       Rejoin()
    elseif cmd == "/clearsky" or cmd == "/removesky" or cmd == "/deletesky" then
       ClearSky()
+   elseif cmd == "/ban" or cmd == "/serverban" or cmd == "/sban" then
+      Ban(args)
    elseif cmd == "/kick" or cmd == "/k" then
       Kick(args)
    end
