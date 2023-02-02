@@ -832,7 +832,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
                }
 
                game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
-               print(plr.Name.." tried to join."
+               print(plr.Name.." tried to join.")
             end
          end)
          wait(1)
@@ -857,7 +857,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
                }
 
                game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
-               print(plr.Name.." tried to join."
+               print(plr.Name.." tried to join.")
             end
          end)
          wait(1)
@@ -866,7 +866,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
             Font = Enum.Font.FredokaOne;
             TextSize = 16;
          }
-         properties.Text = guy.Name.." has been kicked."
+         properties.Text = guy.Name.." has been banned."
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
          local yeah = {
             [1] = guy
