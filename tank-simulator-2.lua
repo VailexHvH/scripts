@@ -826,14 +826,14 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
          local getrandom = math.random(1, #game.Players:GetPlayers())
          local bro = game.Players:GetPlayers()[getrandom]
          game.Players.PlayerAdded:Connect(function(plr)
-            if plr.Name == bro.Name then
-               local yeah = {
-                  [1] = plr
-               }
+         if plr.Name == bro.Name then
+            local yeah = {
+               [1] = plr
+            }
 
-               game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
-               print(plr.Name.." tried to join.")
-            end
+            game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+            print(plr.Name.." tried to join.")
+         end
          end)
          wait(1)
          local properties = {
@@ -851,14 +851,14 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       else
          local guy = findplr(pr[2])
          game.Players.PlayerAdded:Connect(function(plr)
-            if plr.Name == guy.Name then
-               local yeah = {
-                  [1] = plr
-               }
+         if plr.Name == guy.Name then
+            local yeah = {
+               [1] = plr
+            }
 
-               game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
-               print(plr.Name.." tried to join.")
-            end
+            game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+            print(plr.Name.." tried to join.")
+         end
          end)
          wait(1)
          local properties = {
@@ -874,6 +874,68 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
 
          game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
       end
+   end
+
+   function Shutdown()
+      for _,w in pairs(workspace:GetChildren()) do
+         local yeah = {
+            [1] = w
+         }
+
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+      end
+      for _,t in pairs(game.Teams:GetChildren()) do
+         local yeah = {
+            [1] = t
+         }
+
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+      end
+
+      local yeah = {
+         [1] = game.ReplicatedStorage.VoteKickGui
+      }
+
+      game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+
+      for _,script in pairs(game.ReplicatedFirst:GetChildren()) do
+         local yeah = {
+            [1] = script
+         }
+
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+      end
+      for _,gui in pairs(game.StarterGui:GetChildren()) do
+         local yeah = {
+            [1] = gui
+         }
+
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+      end
+
+      for _,l in pairs(game.Lighting:GetChildren()) do
+         local yeah = {
+            [1] = l
+         }
+
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+      end
+      wait(2)
+      for _,p in pairs(game.Players:GetPlayers()) do
+         if game.Players.LocalPlayer.Name ~= p.Name then
+            local yeah = {
+               [1] = p
+            }
+
+            game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+         end
+      end
+      wait(2)
+      local yeah = {
+         [1] = game.Players.LocalPlayer
+      }
+
+      game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
    end
 
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
@@ -905,39 +967,39 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    end)
 
    game.RunService.Heartbeat:Connect(function()
-      pcall(function()
-         game.Lighting.BlurEffect.Size = 0
-      end)
+   pcall(function()
+   game.Lighting.BlurEffect.Size = 0
+   end)
    end)
 
    pcall(function()
-      local yesbutton = {
-          [1] = nil,
-          [2] = nil,
-          [3] = nil,
-          [4] = false,
-          [5] = game.ReplicatedStorage.VoteKickGui.Frame.YesButton,
-          [6] = 0
-      }
-      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(yesbutton))
-      local nobutton = {
-          [1] = nil,
-          [2] = nil,
-          [3] = nil,
-          [4] = false,
-          [5] = game.ReplicatedStorage.VoteKickGui.Frame.NoButton,
-          [6] = 0
-      }
-      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(nobutton))
-      local madebyname = {
-          [1] = nil,
-          [2] = nil,
-          [3] = nil,
-          [4] = false,
-          [5] = game.ReplicatedStorage.VoteKickGui.Frame.MadeByName,
-          [6] = 0
-      }
-      game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(madebyname))
+   local yesbutton = {
+      [1] = nil,
+      [2] = nil,
+      [3] = nil,
+      [4] = false,
+      [5] = game.ReplicatedStorage.VoteKickGui.Frame.YesButton,
+      [6] = 0
+   }
+   game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(yesbutton))
+   local nobutton = {
+      [1] = nil,
+      [2] = nil,
+      [3] = nil,
+      [4] = false,
+      [5] = game.ReplicatedStorage.VoteKickGui.Frame.NoButton,
+      [6] = 0
+   }
+   game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(nobutton))
+   local madebyname = {
+      [1] = nil,
+      [2] = nil,
+      [3] = nil,
+      [4] = false,
+      [5] = game.ReplicatedStorage.VoteKickGui.Frame.MadeByName,
+      [6] = 0
+   }
+   game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(madebyname))
    end)
 
    local properties = {
@@ -949,7 +1011,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    game:GetService("StarterGui"):SetCore("SendNotification",
    {
       Title = "Admin Commands",
-      Text = "Loaded! Use /cmds to see every command. Made by Gerashino#8015",
+      Text = "Loaded! Use :cmds to see every command. Made by Gerashino#8015",
       Duration = 3
    }
    )
