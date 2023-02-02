@@ -698,7 +698,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/clearsky (Aliases: removesky, deletesky) - Makes the sky clear. (Serverside)"
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/kick (Aliases: k) - Kick any player u want."
+      properties.Text = "/kick (Aliases: k) - Kick player(s)."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
@@ -736,23 +736,87 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
-   function Kick(params)
-      local plr = findplr(params[2])
-      local args = {
-         [1] = plr
-      }
+   function Kick(pr)
+      if pr[2] == "all" then
+         for _,v in pairs(game.Players:GetPlayers()) do
+            local yeah = {
+               [1] = v
+            }
 
-      game:GetService("ReplicatedStorage").VoteKickEvent:FireServer(unpack(args))
-      wait(1)
-      game:GetService("ReplicatedStorage").YesEvent:FireServer()
-      wait(10)
-      local properties = {
-         Color = Color3.new(12, 255, 0);
-         Font = Enum.Font.FredokaOne;
-         TextSize = 16;
-      }
-      properties.Text = "Kicked "..plr.Name..". You can use this command after 60 seconds."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+            game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+         end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Everyone has been kicked."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      elseif pr[2] == "me" then
+         local yeah = {
+            [1] = game.Players.LocalPlayer
+         }
+
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "You have been kicked."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      elseif pr[2] == "others" then
+         for _,v in pairs(game.Players:GetPlayers()) do
+            if game.Players.LocalPlayer.Name ~= v.Name then
+               local yeah = {
+                  [1] = v
+               }
+
+               game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+            end
+         end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Other Players were kicked."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      elseif pr[2] == "random" then
+         local getrandom = math.random(1, #game.Players:GetPlayers())
+         local plr = game.Players:GetPlayers()[getrandom]
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = plr.Name.." has been kicked."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+         local yeah = {
+            [1] = plr
+         }
+
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+      else
+         local plr = findplr(pr[2])
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = plr.Name.." has been kicked."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+         local yeah = {
+            [1] = plr
+         }
+
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+      end
    end
 
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
