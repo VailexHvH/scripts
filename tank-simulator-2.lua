@@ -698,7 +698,9 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/clearsky (Aliases: removesky, deletesky) - Makes the sky clear. (Serverside)"
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = "/kick (Aliases: k) - Kick player(s)."
+      properties.Text = "/ban [Player] (Aliases: serverban, sban) - Ban any player."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      properties.Text = "/kick [Player] (Aliases: k) - Kick player(s)."
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    end
 
