@@ -684,36 +684,19 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    end
 
    function CommandsList()
-      local properties = {
-         Color = Color3.new(12, 255, 0);
-         Font = Enum.Font.FredokaOne;
-         TextSize = 16;
-      }
       wait(1)
-      properties.Text = "Commands:"
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = ":kill [Player] - Kill any player except players with godmode."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = ":tp [Player] - Teleports you to any player."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = ":god [Player] - Gives godmode to any player."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = ":heal [Player] - Heals any player."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = ":setmoney [Player] [Amount] (Aliases: moneyset, setcash, cashset, setpoint, pointset, setpoints, pointsset) - Set's any amount of points to any player u want."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = ":givehp [Player] [Amount] (Aliases: hp) - Gives health to any player."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = ":rejoin (Aliases: rj) - Rejoin."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = ":clearsky (Aliases: removesky, deletesky) - Makes the sky clear. (Serverside)"
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = ":ban [Player] (Aliases: serverban, sban) - Ban any player."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = ":kick [Player] (Aliases: k) - Kick player(s)."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-      properties.Text = ":shutdown (Aliases: sd) - Shutdowns the server."
-      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      msg("Commands:")
+      msg(":kill [Player] - Kill any player except players with godmode.")
+      msg(":tp [Player] - Teleports you to any player.")
+      msg(":god [Player] - Gives godmode to any player.")
+      msg(":heal [Player] - Heals any player.")
+      msg(":setmoney [Player] [Amount] (Aliases: moneyset, setcash, cashset, setpoint, pointset, setpoints, pointsset) - Set's any amount of points to any player u want.")
+      msg(":givehp [Player] [Amount] (Aliases: hp) - Gives health to any player.")
+      msg(":rejoin (Aliases: rj) - Rejoin.")
+      msg(":clearsky (Aliases: removesky, deletesky) - Makes the sky clear. (Serverside)")
+      msg(":ban [Player] (Aliases: serverban, sban) - Ban any player.")
+      msg(":kick [Player] (Aliases: k) - Kick player(s).")
+      msg(":shutdown (Aliases: sd) - Shutdowns the server.")
    end
 
    function Rejoin()
