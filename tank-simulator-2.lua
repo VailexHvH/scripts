@@ -935,7 +935,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
             game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
          end
       end
-      wait(3)
+      wait(10)
       game.Players.LocalPlayer:Kick("Shutdown.")
    end
 
