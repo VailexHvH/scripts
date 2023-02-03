@@ -1002,12 +1002,6 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(madebyname))
    end)
 
-   local properties = {
-      Color = Color3.new(12, 255, 0);
-      Font = Enum.Font.FredokaOne;
-      TextSize = 16;
-   }
-
    game:GetService("StarterGui"):SetCore("SendNotification",
    {
       Title = "Admin Commands",
@@ -1016,8 +1010,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    }
    )
 
-   properties.Text = "Script is now running! Use :cmds to see every command. Made by Gerashino#8015"
-   game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+   msg("Script is now running! Use :cmds to see every command. Made by Gerashino#8015")
 
    --gameplaceid end
 end
