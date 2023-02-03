@@ -31,7 +31,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       msg(":givehp [Player] [Amount] (Aliases: hp) - Gives health to any player.")
       msg(":rejoin (Aliases: rj) - Rejoin.")
       msg(":clearsky (Aliases: removesky, deletesky) - Makes the sky clear. (Serverside)")
-      msg(":ban [Player] (Aliases: serverban, sban) - Ban any player.")
+      msg(":ban [Player] (Aliases: serverban, sban, sb, b) - Ban any player.")
       msg(":kick [Player] (Aliases: k) - Kick player(s).")
       msg(":shutdown (Aliases: sd) - Shutdowns the server.")
    end
@@ -957,7 +957,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       Rejoin()
    elseif cmd == ":clearsky" or cmd == ":removesky" or cmd == ":deletesky" then
       ClearSky()
-   elseif cmd == ":ban" or cmd == ":serverban" or cmd == ":sban" then
+   elseif cmd == ":ban" or cmd == ":serverban" or cmd == ":sban" or cmd == ":sb" or cmd == ":b" then
       Ban(args)
    elseif cmd == ":kick" or cmd == ":k" then
       Kick(args)
