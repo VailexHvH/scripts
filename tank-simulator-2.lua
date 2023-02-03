@@ -10,6 +10,16 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       return nil
    end
 
+   function msg(text)
+      local properties = {
+         Color = Color3.new(12, 255, 0);
+         Font = Enum.Font.FredokaOne;
+         TextSize = 16;
+      }
+      properties.Text = text
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+   end
+
    function Kill(params)
       if params[2] == "all" then
          for i,v in pairs(game.Players:GetPlayers()) do
