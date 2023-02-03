@@ -951,6 +951,114 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       msg("All Tanks were cleared.")
    end
 
+   function SetKills(params)
+      if params[2] == "all" then
+         for i,v in pairs(game.Players:GetPlayers()) do
+            local getnumber = params[3]
+            local number = getnumber
+            lolman = v.leaderstats.Kill
+
+            local set = {
+               [1] = lolman,
+               [2] = number
+            }
+
+            game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
+         end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Everyone's kills have been set to "..params[3].."."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      elseif params[2] == "me" then
+         local getnumber = params[3]
+         local number = getnumber
+         lolman = game.Players.LocalPlayer.leaderstats.Kill
+
+         local set = {
+            [1] = lolman,
+            [2] = number
+         }
+
+         game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Your kills have been set to "..params[3].."."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      elseif params[2] == "random" then
+         local getrandom = math.random(1, #game.Players:GetPlayers())
+         local getplr = game.Players:GetPlayers()[getrandom]
+         local getnumber = params[3]
+         local number = getnumber
+         lolman = getplr.leaderstats.Kill
+
+         local set = {
+            [1] = lolman,
+            [2] = number
+         }
+
+         game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = getplr.Name.."'s kills have been set to "..params[3].."."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      elseif params[2] == "others" then
+         for i,v in pairs(game.Players:GetPlayers()) do
+            if game.Players.LocalPlayer.Name ~= v.Name then
+               local getnumber = params[3]
+               local number = getnumber
+               lolman = v.leaderstats.Kill
+
+               local set = {
+                  [1] = lolman,
+                  [2] = number
+               }
+
+               game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
+            end
+         end
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = "Other Players kills have been set to "..params[3].."."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      else
+         local player = findplr(params[2])
+         local getnumber = params[3]
+         local number = getnumber
+         lolman = player.leaderstats.Kill
+
+         local set = {
+            [1] = lolman,
+            [2] = number
+         }
+
+         game:GetService("ReplicatedStorage").GroupAddEvent:FireServer(unpack(set))
+         wait(1)
+         local properties = {
+            Color = Color3.new(12, 255, 0);
+            Font = Enum.Font.FredokaOne;
+            TextSize = 16;
+         }
+         properties.Text = player.Name.."'s kills have been set to "..params[3].."."
+         game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
+      end
+   end
+
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
    local cmd = string.lower(args[1])
