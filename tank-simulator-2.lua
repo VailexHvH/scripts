@@ -34,6 +34,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       msg(":ban [Player] (Aliases: serverban, sban, sb, b) - Ban any player.")
       msg(":kick [Player] (Aliases: k) - Kick player(s).")
       msg(":shutdown (Aliases: sd) - Shutdowns the server.")
+      msg(":cleartanks (Aliases: ctanks, ct, deletetanks, dtanks, dt) - Clear all tanks on the server.")
    end
 
    function Kill(params)
@@ -936,6 +937,18 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       game.Players.LocalPlayer:Kick("Shutdown.")
    end
 
+   function ClearTanks()
+      for i,v in pairs(workspace.TankFolder:GetChildren()) do
+         ajjananannananannananannanan = {
+             [1] = v
+         }
+
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(ajjananannananannananannanan))
+      end
+      wait(1)
+      msg("All Tanks were cleared.")
+   end
+
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
    local args = string.split(msg," ")
    local cmd = string.lower(args[1])
@@ -963,6 +976,8 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       Kick(args)
    elseif cmd == ":shutdown" or cmd == ":sd" then
       Shutdown()
+   elseif cmd == ":cleartanks" or cmd == ":ctanks" or cmd == ":ct" or cmd == ":deletetanks" or cmd == ":dtanks" or cmd == ":dt" then
+      ClearTanks()
    end
    end)
 
