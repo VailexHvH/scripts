@@ -27,7 +27,8 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       msg(":tp [Player] - Teleports you to any player.")
       msg(":god [Player] - Gives godmode to any player.")
       msg(":heal [Player] - Heals any player.")
-      msg(":setmoney [Player] [Amount] (Aliases: moneyset, setcash, cashset, setpoint, pointset, setpoints, pointsset) - Set's any amount of points to any player u want.")
+      msg(":setmoney [Player] [Amount] (Aliases: moneyset, setcash, cashset, setpoint, pointset, setpoints, pointsset) - Set's any amount of points to any player(s).")
+      msg(":setkills [Player] [Amount] (Aliases: setkill, skills, skill) - Set's any amount of kills to any player(s).")
       msg(":givehp [Player] [Amount] (Aliases: hp) - Gives health to any player.")
       msg(":rejoin (Aliases: rj) - Rejoin.")
       msg(":clearsky (Aliases: removesky, deletesky) - Makes the sky clear. (Serverside)")
@@ -1088,6 +1089,8 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       Shutdown()
    elseif cmd == ":cleartanks" or cmd == ":ctanks" or cmd == ":ct" or cmd == ":deletetanks" or cmd == ":dtanks" or cmd == ":dt" then
       ClearTanks()
+   elseif cmd == ":setkills" or cmd == ":setkill" or cmd == ":skills" or cmd == ":skill" then
+      SetKills(args)
    end
    end)
 
