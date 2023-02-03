@@ -442,7 +442,8 @@ elseif game.PlaceId == 12015736082 then
       Rejoin()
    end
    end)
-elseif game.PlaceId == 9329726891 then
+end
+if game.PlaceId == 9329726891 then
    game:GetService("StarterGui"):SetCore("SendNotification",
    {
       Title = "Server Destroyer",
@@ -470,6 +471,7 @@ elseif game.PlaceId == 9329726891 then
 
       game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
    end
+   wait(1)
    for _,g in pairs(game.StarterGui:GetChildren()) do
       local destroy = {
          [1] = g,
@@ -480,6 +482,7 @@ elseif game.PlaceId == 9329726891 then
 
       game:GetService("Lighting").ThrowGrenadeEvent:FireServer(unpack(destroy))
    end
+   wait(1)
    for _,t in pairs(game.Teams:GetChildren()) do
       local destroy = {
          [1] = t,
