@@ -873,13 +873,8 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    end
 
    function Shutdown()
-      local properties = {
-         Color = Color3.new(12, 255, 0);
-         Font = Enum.Font.FredokaOne;
-         TextSize = 16;
-      }
       wait(1)
-      properties.Text = "Shutting down server..."
+      msg("Shutting down server...")
       for _,w in pairs(workspace:GetChildren()) do
          local yeah = {
             [1] = w
@@ -982,9 +977,9 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    end)
 
    game.RunService.Heartbeat:Connect(function()
-   pcall(function()
-   game.Lighting.BlurEffect.Size = 0
-   end)
+      pcall(function()
+         game.Lighting.BlurEffect.Size = 0
+      end)
    end)
 
    pcall(function()
