@@ -10,6 +10,12 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       return nil
    end
 
+   local function findrandom()
+      local getrandom = math.random(1, #game.Players:GetPlayers())
+      local player = game.Players:GetPlayers()[getrandom]
+      return player
+   end
+
    function msg(text)
       local properties = {
          Color = Color3.new(12, 255, 0);
