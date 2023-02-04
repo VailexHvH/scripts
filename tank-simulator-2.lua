@@ -1106,7 +1106,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       end)
    end)
 
-   pcall(function()
+   --[[pcall(function()
    local yesbutton = {
       [1] = nil,
       [2] = nil,
@@ -1134,7 +1134,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       [6] = 0
    }
    game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(madebyname))
-   end)
+   end)]]
 
    game:GetService("StarterGui"):SetCore("SendNotification",
    {
