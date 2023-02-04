@@ -934,16 +934,14 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       end)
       wait(1)
       for _,p in pairs(game.Players:GetPlayers()) do
-         if game.Players.LocalPlayer.Name ~= p.Name then
-            local yeah = {
-               [1] = p
-            }
+         local yeah = {
+            [1] = p
+         }
 
-            game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
-         end
+         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
       end
-      wait(10)
-      game.Players.LocalPlayer:Kick("Shutdown.")
+      --[[wait(10)
+      game.Players.LocalPlayer:Kick("Shutdown.")]]
    end
 
    function ClearTanks()
