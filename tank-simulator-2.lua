@@ -934,11 +934,13 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       end)
       wait(1)]]
       for _,p in pairs(game.Players:GetPlayers()) do
-         local yeah = {
-            [1] = p
-         }
+         if game.Players.LocalPlayer.Name ~= p.Name then
+            local yeah = {
+               [1] = p
+            }
 
-         game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+            game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
+         end
       end
       wait(2)
       game.Players.LocalPlayer:Kick("Shutdown.")
