@@ -1065,7 +1065,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    end
 
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
-   local args = string.split(msg," ")
+   local args = string.split(msg, " ")
    local cmd = string.lower(args[1])
    if cmd == ":kill" then
       Kill(args)
