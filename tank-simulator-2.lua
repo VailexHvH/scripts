@@ -882,7 +882,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    function Shutdown()
       wait(1)
       msg("Shutting down server...")
-      for _,w in pairs(workspace:GetChildren()) do
+      --[[for _,w in pairs(workspace:GetChildren()) do
          local yeah = {
             [1] = w
          }
@@ -932,7 +932,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
 
          game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(bye))
       end)
-      wait(1)
+      wait(1)]]
       for _,p in pairs(game.Players:GetPlayers()) do
          local yeah = {
             [1] = p
@@ -940,8 +940,8 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
 
          game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
       end
-      --[[wait(10)
-      game.Players.LocalPlayer:Kick("Shutdown.")]]
+      wait(2)
+      game.Players.LocalPlayer:Kick("Shutdown.")
    end
 
    function ClearTanks()
