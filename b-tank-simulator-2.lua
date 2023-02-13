@@ -1,6 +1,7 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/VailexHvH/scripts/main/tank-simulator-2.lua"))()
 
---[[if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId == 12015736082 or game.PlaceId == 12173240994 or game.PlaceId == 12335478362 then
+--[[
+if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId == 12015736082 or game.PlaceId == 12173240994 or game.PlaceId == 12335478362 then
    --gameplaceid start
 
    local function findplr(plr)
@@ -1149,4 +1150,5 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/VailexHvH/scripts/mai
    msg("Script is now running! Use :cmds to see every command. Made by Gerashino#8015")
 
    --gameplaceid end
-end]]
+end
+]]
