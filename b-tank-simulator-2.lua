@@ -1139,7 +1139,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/VailexHvH/scripts/mai
    game:GetService("ReplicatedStorage").ThrowGrenade:FireServer(unpack(madebyname))
    end)]]
 
-   game:GetService("StarterGui"):SetCore("SendNotification",
+   --[[game:GetService("StarterGui"):SetCore("SendNotification",
    {
       Title = "Admin Commands",
       Text = "Loaded! Use :cmds to see every command. Made by Gerashino#8015",
