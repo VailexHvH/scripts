@@ -1100,11 +1100,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    end
    end)
 
-   game.RunService.Heartbeat:Connect(function()
-      pcall(function()
-         game.Lighting.BlurEffect.Size = 0
-      end)
-   end)
+   game.Lighting.BlurEffect.Enabled = false
 
    --[[pcall(function()
    local yesbutton = {
