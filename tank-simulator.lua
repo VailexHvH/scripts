@@ -696,6 +696,8 @@ if game.PlaceId == 9329726891 then
          TextSize = 16;
       }
       wait(1)
+      properties.Text = "Some commands might not work because they're patched."
+      game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "Commands:"
       game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       properties.Text = "/kill [Player] - Kill any player(s) except players with godmode."
