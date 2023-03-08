@@ -72,20 +72,16 @@ if game.PlaceId == 6317098971 then
       elseif args[3] == "random" then
          local plr = findrandomplr()
          for i = 1,15 do
-            for i,v in pairs(game.Players:GetPlayers()) do
                local random={[1]=Vector3.new(0,0,0),[2]=CFrame.new(0,0,0),[3]=plr.Character.HumanoidRootPart}
                game.ReplicatedStorage.Maxim.Seat.ToolScript.Maxim.RemoteEvent:FireServer(unpack(random))
-            end
          end
          wait(1)
          msg("Killed "..plr.Name)
       else
          local plr = findplr(args[3])
          for i = 1,15 do
-            for i,v in pairs(game.Players:GetPlayers()) do
                local idksomeguy={[1]=Vector3.new(0,0,0),[2]=CFrame.new(0,0,0),[3]=plr.Character.HumanoidRootPart}
                game.ReplicatedStorage.Maxim.Seat.ToolScript.Maxim.RemoteEvent:FireServer(unpack(idksomeguy))
-            end
          end
          wait(1)
          msg("Killed "..plr.Name)
