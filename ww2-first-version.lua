@@ -46,7 +46,7 @@ if game.PlaceId == 6317098971 then
 
    function Kill(args)
       if args[3] == "all" then
-         for i = 1,15 do
+         for i = 1,45 do
             for _,v in pairs(game.Players:GetPlayers()) do
                local all={[1]=Vector3.new(0,0,0),[2]=CFrame.new(0,0,0),[3]=v.Character.HumanoidRootPart}
                game.ReplicatedStorage.Maxim.Seat.ToolScript.Maxim.RemoteEvent:FireServer(unpack(all))
@@ -59,7 +59,7 @@ if game.PlaceId == 6317098971 then
          wait(1)
          msg("You have been killed.")
       elseif args[3] == "others" then
-         for i = 1,15 do
+         for i = 1,45 do
             for _,v in pairs(game.Players:GetPlayers()) do
                if game.Players.LocalPlayer.Name ~= v.Name then
                   local others={[1]=Vector3.new(0,0,0),[2]=CFrame.new(0,0,0),[3]=v.Character.HumanoidRootPart}
@@ -71,7 +71,7 @@ if game.PlaceId == 6317098971 then
          msg("Other players were killed.")
       elseif args[3] == "random" then
          local plr = findrandomplr()
-         for i = 1,15 do
+         for i = 1,45 do
                local random={[1]=Vector3.new(0,0,0),[2]=CFrame.new(0,0,0),[3]=plr.Character.HumanoidRootPart}
                game.ReplicatedStorage.Maxim.Seat.ToolScript.Maxim.RemoteEvent:FireServer(unpack(random))
          end
@@ -79,7 +79,7 @@ if game.PlaceId == 6317098971 then
          msg("Killed "..plr.Name)
       else
          local plr = findplr(args[3])
-         for i = 1,15 do
+         for i = 1,45 do
                local idksomeguy={[1]=Vector3.new(0,0,0),[2]=CFrame.new(0,0,0),[3]=plr.Character.HumanoidRootPart}
                game.ReplicatedStorage.Maxim.Seat.ToolScript.Maxim.RemoteEvent:FireServer(unpack(idksomeguy))
          end
