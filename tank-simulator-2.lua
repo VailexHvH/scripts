@@ -18,7 +18,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
 
    function msg(text)
       local properties = {
-         Color = Color3.new(12, 255, 0);
+         Color = Color3.fromRGB(0, 255, 0);
          Font = Enum.Font.FredokaOne;
          TextSize = 16;
       }
