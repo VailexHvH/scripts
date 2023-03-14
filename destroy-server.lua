@@ -457,9 +457,9 @@ elseif game.PlaceId == 9329726891 then
    }
    properties.Text = "Server Destroyer. Made by Gerashino#8015"
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-   properties.Text = "Destroying Server..."
+   properties.Text = "Crashing Server..."
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-   properties.Text = "Server has been successfully destroyed!"
+   properties.Text = "Server has been successfully crashed!"
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    wait(1)
    for i = 1,1000000 do
