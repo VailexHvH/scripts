@@ -461,7 +461,7 @@ elseif game.PlaceId == 9329726891 then
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
    properties.Text = "Server has been successfully crashed!"
    game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
-   for i = 1,100000 do
+   for i = 1,1000000 do
       local args = {
           [1] = CFrame.new(-1494.8148193359375, 261.584716796875, -858.8607177734375) * CFrame.Angles(3.141592502593994, 0.8347081542015076, -3.1414706707000732),
           [2] = Vector3.new(-1490.910400390625, 258, -855.2946166992188),
