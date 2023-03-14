@@ -7,7 +7,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    }
    )
    local properties = {
-      Color = Color3.new(12, 255, 0);
+      Color = Color3.fromRGB(0, 255, 0);
       Font = Enum.Font.FredokaOne;
       TextSize = 16;
    }
@@ -150,7 +150,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[getplr.Name].Character.HumanoidRootPart.CFrame
          wait(1)
          local properties = {
-            Color = Color3.new(12, 255, 0);
+            Color = Color3.fromRGB(0, 255, 0);
             Font = Enum.Font.FredokaOne;
             TextSize = 16;
          }
@@ -162,7 +162,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[v.Name].Character.HumanoidRootPart.CFrame
                wait(1)
                local properties = {
-                  Color = Color3.new(12, 255, 0);
+                  Color = Color3.fromRGB(0, 255, 0);
                   Font = Enum.Font.FredokaOne;
                   TextSize = 16;
                }
@@ -177,7 +177,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
       wait(1)
       local properties = {
-         Color = Color3.new(12, 255, 0);
+         Color = Color3.fromRGB(0, 255, 0);
          Font = Enum.Font.FredokaOne;
          TextSize = 16;
       }
@@ -187,7 +187,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
 
    function CommandsList()
       local properties = {
-         Color = Color3.new(12, 255, 0);
+         Color = Color3.fromRGB(0, 255, 0);
          Font = Enum.Font.FredokaOne;
          TextSize = 16;
       }
@@ -220,7 +220,7 @@ elseif game.PlaceId == 12335478362 then
    }
    )
    local properties = {
-      Color = Color3.new(12, 255, 0);
+      Color = Color3.fromRGB(0, 255, 0);
       Font = Enum.Font.FredokaOne;
       TextSize = 16;
    }
@@ -294,7 +294,7 @@ elseif game.PlaceId == 12335478362 then
          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[getplr.Name].Character.HumanoidRootPart.CFrame
          wait(1)
          local properties = {
-            Color = Color3.new(12, 255, 0);
+            Color = Color3.fromRGB(0, 255, 0);
             Font = Enum.Font.FredokaOne;
             TextSize = 16;
          }
@@ -306,7 +306,7 @@ elseif game.PlaceId == 12335478362 then
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[v.Name].Character.HumanoidRootPart.CFrame
                wait(1)
                local properties = {
-                  Color = Color3.new(12, 255, 0);
+                  Color = Color3.fromRGB(0, 255, 0);
                   Font = Enum.Font.FredokaOne;
                   TextSize = 16;
                }
@@ -328,7 +328,7 @@ elseif game.PlaceId == 12335478362 then
          end
          wait(1)
          local properties = {
-            Color = Color3.new(12, 255, 0);
+            Color = Color3.fromRGB(0, 255, 0);
             Font = Enum.Font.FredokaOne;
             TextSize = 16;
          }
@@ -342,7 +342,7 @@ elseif game.PlaceId == 12335478362 then
          game.ReplicatedStorage.HitSkurtEvent:FireServer(unpack(yeah))
          wait(1)
          local properties = {
-            Color = Color3.new(12, 255, 0);
+            Color = Color3.fromRGB(0, 255, 0);
             Font = Enum.Font.FredokaOne;
             TextSize = 16;
          }
@@ -360,7 +360,7 @@ elseif game.PlaceId == 12335478362 then
          end
          wait(1)
          local properties = {
-            Color = Color3.new(12, 255, 0);
+            Color = Color3.fromRGB(0, 255, 0);
             Font = Enum.Font.FredokaOne;
             TextSize = 16;
          }
@@ -371,7 +371,7 @@ elseif game.PlaceId == 12335478362 then
          local plr = game.Players:GetPlayers()[getrandom]
          wait(1)
          local properties = {
-            Color = Color3.new(12, 255, 0);
+            Color = Color3.fromRGB(0, 255, 0);
             Font = Enum.Font.FredokaOne;
             TextSize = 16;
          }
@@ -386,7 +386,7 @@ elseif game.PlaceId == 12335478362 then
          local plr = findplr(pr[2])
          wait(1)
          local properties = {
-            Color = Color3.new(12, 255, 0);
+            Color = Color3.fromRGB(0, 255, 0);
             Font = Enum.Font.FredokaOne;
             TextSize = 16;
          }
@@ -404,7 +404,7 @@ elseif game.PlaceId == 12335478362 then
       game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
       wait(1)
       local properties = {
-         Color = Color3.new(12, 255, 0);
+         Color = Color3.fromRGB(0, 255, 0);
          Font = Enum.Font.FredokaOne;
          TextSize = 16;
       }
@@ -414,7 +414,7 @@ elseif game.PlaceId == 12335478362 then
 
    function CommandsList()
       local properties = {
-         Color = Color3.new(12, 255, 0);
+         Color = Color3.fromRGB(0, 255, 0);
          Font = Enum.Font.FredokaOne;
          TextSize = 16;
       }
@@ -451,7 +451,7 @@ elseif game.PlaceId == 9329726891 then
    }
    )
    local properties = {
-      Color = Color3.new(12, 255, 0);
+      Color = Color3.fromRGB(0, 255, 0);
       Font = Enum.Font.FredokaOne;
       TextSize = 16;
    }
