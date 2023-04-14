@@ -211,7 +211,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
       Rejoin()
    end
    end)
-elseif game.PlaceId == 12335478362 then
+elseif game.PlaceId == 12988092080 then
    game:GetService("StarterGui"):SetCore("SendNotification",
    {
       Title = "Server Destroyer",
