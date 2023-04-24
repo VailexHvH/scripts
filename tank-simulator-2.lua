@@ -3,7 +3,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
 
    local function findplr(plr)
       for i,v in pairs(game.Players:GetPlayers()) do
-         if v.Name:lower():sub(1,#plr) == plr:lower() then
+         if v.Name:lower():sub(1,#plr) == plr:lower() or v.DisplayName:lower():sub(1,#plr) == plr:lower() then
             return v;
          end
       end
