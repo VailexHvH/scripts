@@ -158,7 +158,7 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
          for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
+            if v.Name:lower():sub(1,#params[2]) == params[2]:lower() or v.DisplayName:lower():sub(1,#params[2]) == params[2]:lower() then
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[v.Name].Character.HumanoidRootPart.CFrame
                wait(1)
                local properties = {
@@ -280,7 +280,7 @@ elseif game.PlaceId == 12988092080 then
 
    local function findplr(plr)
       for i,v in pairs(game.Players:GetPlayers()) do
-         if v.Name:lower():sub(1,#plr) == plr:lower() then
+         if v.Name:lower():sub(1,#plr) == plr:lower() or v.DisplayName:lower():sub(1,#plr) == plr:lower() then
             return v;
          end
       end
@@ -302,7 +302,7 @@ elseif game.PlaceId == 12988092080 then
          game.StarterGui:SetCore("ChatMakeSystemMessage", properties)
       else
          for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name:lower():sub(1,#params[2]) == params[2]:lower() then
+            if v.Name:lower():sub(1,#params[2]) == params[2]:lower() or v.DisplayName:lower():sub(1,#params[2]) == params[2]:lower() then
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[v.Name].Character.HumanoidRootPart.CFrame
                wait(1)
                local properties = {
