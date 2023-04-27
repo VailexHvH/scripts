@@ -959,6 +959,8 @@ if game.PlaceId == 9329726891 then
       SGodmode(args, gymbro)
    end
    end)
+   wait(1)
+   msg("Ranked "..gymbro.Name)
    end
 
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
