@@ -2,10 +2,10 @@ if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId ==
    --gameplaceid start
 
    pcall(function()
-      if _G.TankSimulatorLol_game then
+      if _G.TankSimulator2Lol_game then
          game:GetService("Players").LocalPlayer:Kick("Don't execute script multiple times.")
       else
-         _G.TankSimulatorLol_game = true
+         _G.TankSimulator2Lol_game = true
       end
    end)
 
