@@ -1,6 +1,14 @@
 if game.PlaceId == 11698235691 or game.PlaceId == 11940161478 or game.PlaceId == 12015736082 or game.PlaceId == 12173240994 or game.PlaceId == 12335478362 or game.PlaceId == https:13149910801 then
    --gameplaceid start
 
+   pcall(function()
+      if _G.TankSimulatorLol_game then
+         game:GetService("Players").LocalPlayer:Kick("Don't execute script multiple times.")
+      else
+         _G.TankSimulatorLol_game = true
+      end
+   end)
+
    local function findplr(plr)
       for i,v in pairs(game.Players:GetPlayers()) do
          if v.Name:lower():sub(1,#plr) == plr:lower() or v.DisplayName:lower():sub(1,#plr) == plr:lower() then
