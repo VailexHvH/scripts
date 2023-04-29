@@ -4,7 +4,7 @@ if game.PlaceId == 6317098971 then
       if _G.TankSimulator1Lol_game then
          game:GetService("Players").LocalPlayer:Kick("Don't execute script multiple times.")
       else
-         _G.TankSimulatorLol_game = true
+         _G.TankSimulator1Lol_game = true
       end
    end)
 
