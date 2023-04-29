@@ -1210,7 +1210,7 @@ if game.PlaceId == 9329726891 then
       elseif cmd == "/god" then
          SGodmode(args, gymbro)
       elseif cmd == "/givemoney" or cmd == "/addmoney" or cmd == "/give" then
-         GiveMoney(args, gymbro)
+         SGiveMoney(args, gymbro)
       elseif cmd == "/killteam" or cmd == "/killt" or cmd == "/kt" then
          SKillTeam(args, gymbro)
       end
