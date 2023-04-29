@@ -1127,7 +1127,7 @@ if game.PlaceId == 9329726891 then
             end
          end
          wait(1)
-         msg("German team has been killed.")
+         msg("USA team has been killed.")
       elseif params[2]:lower() == "japan" then
          for i,v in pairs(game.Players:GetPlayers()) do
             if v.TeamColor == game:GetService("Teams")["Japanese Empire"].TeamColor then
@@ -1183,7 +1183,7 @@ if game.PlaceId == 9329726891 then
             end
          end
          wait(1)
-         msg("German team has been killed. ("..getmain.Name..")")
+         msg("USA team has been killed. ("..getmain.Name..")")
       elseif params[2]:lower() == "japan" then
          for i,v in pairs(game.Players:GetPlayers()) do
             if v.TeamColor == game:GetService("Teams")["Japanese Empire"].TeamColor then
