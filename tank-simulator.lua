@@ -48,7 +48,7 @@ if game.PlaceId == 9329726891 then
       msg("/clearsky (Aliases: removesky, deletesky) - Makes the sky clear. (Serverside) (patched)")
       msg("/godkill (Aliases: gkill) - Kill player(s) with godmode or without. (patched)")
       msg("/rank [Player] - Rank someone.")
-      msg("/unrank [Player] - Unrank someone who's ranked.)
+      msg("/unrank [Player] - Unrank someone who's ranked.")
    end
 
    function Kill(params)
