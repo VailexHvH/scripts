@@ -1,7 +1,7 @@
 if game.PlaceId == 6317098971 then
 
    pcall(function()
-      if _G.TankSimulatorLol_game then
+      if _G.TankSimulator1Lol_game then
          game:GetService("Players").LocalPlayer:Kick("Don't execute script multiple times.")
       else
          _G.TankSimulatorLol_game = true
