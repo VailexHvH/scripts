@@ -6,7 +6,6 @@ if game.PlaceId ~= 6317098971 then
    return
 end
 
-
 if _G.TankSimulator1Lol_game then
    return
 end
