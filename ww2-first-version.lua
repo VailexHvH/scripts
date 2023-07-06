@@ -195,4 +195,3 @@ game:GetService("StarterGui"):SetCore("SendNotification",
 )
 
 msg("Script is now running! Use :cmds to see every command. Made by Gerashino#8015")
-end
