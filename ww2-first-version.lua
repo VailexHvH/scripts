@@ -208,7 +208,7 @@ function DeadlyTouch()
     for _, T in next, workspace:GetDescendants() do
         pcall(function()
             T.Touched:Connect(function(hit)
-                local plr = game.Players:GetPlayerFromCharacter(hit.Parent) or game.Players:GetPlayerFromCharacter(hit.Parent.Parent) or game.Players:GetPlayerFromCharacter(hit.Parent.Parent.Parent) or game.Players:GetPlayerFromCharacter(hit.Parent.Parent.Parent.Parent) or game.Players:GetPlayerFromCharacter(hit.Parent.Parent.Parent.Parent.Parent) 
+                local plr = game.Players:GetPlayerFromCharacter(hit.Parent)
                 if plr then
                     if plr.Name == game.Players.LocalPlayer.Name then
                         return
