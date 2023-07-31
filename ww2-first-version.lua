@@ -54,7 +54,7 @@ end
 pcall(function()
     for _, object in pairs(game:GetService("Workspace"):FindFirstChild("ismap"):GetDescendants()) do
         if object.Parent:IsA("Model") and object.Parent.Name == "Model" and object.Name == "Maxim" then
-            object:Clone().Parent = game:GetService("ReplicatedStorage")
+            object.Parent = game:GetService("ReplicatedStorage")
             break
         end
     end
