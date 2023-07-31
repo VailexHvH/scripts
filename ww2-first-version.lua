@@ -52,19 +52,12 @@ function Help()
 end
 
 pcall(function()
-    function scanInWorkspace(placeToScan)
-        for _,object in pairs(placeToScan:GetChildren()) do
-            scanInWorkspace(object)
-            if object:IsA("Model") and object.Name == "Model" then
-                local maxim = object:FindFirstChild "Maxim"
-                if maxim then
-                    maxim.Parent = game.ReplicatedStorage
-                    break
-                end
-            end
+    for _, object in pairs(game:GetService("Workspace"):FindFirstChild("ismap"):GetDescendants()) do
+        if object.Parent:IsA("Model") and object.Parent.Name == "Model" and object.Name == "Maxim" then
+            object:Clone().Parent = game:GetService("ReplicatedStorage")
+            break
         end
     end
-    scanInWorkspace(workspace.ismap)
 end)
 
 function Kill(args)
