@@ -59,6 +59,7 @@ pcall(function()
                 local maxim = object:FindFirstChild "Maxim"
                 if maxim then
                     maxim.Parent = game.ReplicatedStorage
+                    break
                 end
             end
         end
