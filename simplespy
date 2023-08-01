@@ -4,9 +4,7 @@
     SimpleSpy is a lightweight penetration testing tool that logs remote calls.
 
     Credits:
-        Vailex - basically everything
-        Gerashino - cool guy
-        Frosty - GUI to Lua
+        Frosty
 ]]
 
 -- shuts down the previous instance of SimpleSpy
